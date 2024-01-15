@@ -89,6 +89,7 @@
     "url": "https://github.com/ThornDuke/sams-pwd-generator/issues"
   },
   "homepage": "https://github.com/ThornDuke/sams-pwd-generator#readme",
+  "pricing": "Free",
   "scripts": {
     "vscode:prepublish": "npm run esbuild-base -- --minify",
     "compile": "tsc -p ./",
