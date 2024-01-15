@@ -2,9 +2,10 @@
   "name": "sams-pw-gen",
   "displayName": "Sam's Passwords Generator",
   "description": "A simple passwords generator for VSCode",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "icon": "icon.png",
   "engines": {
-    "vscode": "^1.74.0"
+    "vscode": "^1.85.0"
   },
   "categories": [
     "Other"

@@ -4,6 +4,8 @@
 
 ### Added
 
+- Icon
+
 ### Fixed
 
 ### Changed
