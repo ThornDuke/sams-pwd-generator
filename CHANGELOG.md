@@ -19,6 +19,7 @@
 - Icon
 - Opened a github repo
 - README
+- LICENCE (GNU 3.0)
 
 ## [0.1.0] - 2024-01-15
 
