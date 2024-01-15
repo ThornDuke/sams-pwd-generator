@@ -2,6 +2,7 @@
   "name": "sams-pw-gen",
   "displayName": "Sam's Passwords Generator",
   "description": "A simple passwords generator for VSCode",
+  "author": "Thorne Duke",
   "version": "0.1.0",
   "icon": "icon.png",
   "engines": {
@@ -79,6 +80,14 @@
       }
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ThornDuke/sams-pwd-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ThornDuke/sams-pwd-generator/issues"
+  },
+  "homepage": "https://github.com/ThornDuke/sams-pwd-generator#readme",
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",

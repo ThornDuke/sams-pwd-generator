@@ -24,7 +24,7 @@ export function activate(context: vscode.ExtensionContext) {
     'sams-pw-gen.getpwd8',
     () => {
       pwdChan.append(getPwd8().join('\n'));
-      pwdChan.append('\n================\n');
+      pwdChan.append('\n\n');
       pwdChan.show();
     }
   );
@@ -34,7 +34,7 @@ export function activate(context: vscode.ExtensionContext) {
     'sams-pw-gen.getpwd9',
     () => {
       pwdChan.append(getPwd9().join('\n'));
-      pwdChan.append('\n================\n');
+      pwdChan.append('\n\n');
       pwdChan.show();
     }
   );
@@ -44,7 +44,7 @@ export function activate(context: vscode.ExtensionContext) {
     'sams-pw-gen.getpwd10',
     () => {
       pwdChan.append(getPwd10().join('\n'));
-      pwdChan.append('\n================\n');
+      pwdChan.append('\n\n');
       pwdChan.show();
     }
   );
@@ -54,7 +54,7 @@ export function activate(context: vscode.ExtensionContext) {
     'sams-pw-gen.getpwd11',
     () => {
       pwdChan.append(getPwd11().join('\n'));
-      pwdChan.append('\n================\n');
+      pwdChan.append('\n\n');
       pwdChan.show();
     }
   );
@@ -64,7 +64,7 @@ export function activate(context: vscode.ExtensionContext) {
     'sams-pw-gen.getpwd12',
     () => {
       pwdChan.append(getPwd12().join('\n'));
-      pwdChan.append('\n================\n');
+      pwdChan.append('\n\n');
       pwdChan.show();
     }
   );
@@ -74,7 +74,7 @@ export function activate(context: vscode.ExtensionContext) {
     'sams-pw-gen.getpwd13',
     () => {
       pwdChan.append(getPwd13().join('\n'));
-      pwdChan.append('\n================\n');
+      pwdChan.append('\n\n');
       pwdChan.show();
     }
   );
@@ -84,7 +84,7 @@ export function activate(context: vscode.ExtensionContext) {
     'sams-pw-gen.getpwd14',
     () => {
       pwdChan.append(getPwd14().join('\n'));
-      pwdChan.append('\n================\n');
+      pwdChan.append('\n\n');
       pwdChan.show();
     }
   );
@@ -94,7 +94,7 @@ export function activate(context: vscode.ExtensionContext) {
     'sams-pw-gen.getpwd15',
     () => {
       pwdChan.append(getPwd15().join('\n'));
-      pwdChan.append('\n================\n');
+      pwdChan.append('\n\n');
       pwdChan.show();
     }
   );
@@ -104,7 +104,7 @@ export function activate(context: vscode.ExtensionContext) {
     'sams-pw-gen.getpwd16',
     () => {
       pwdChan.append(getPwd16().join('\n'));
-      pwdChan.append('\n================\n');
+      pwdChan.append('\n\n');
       pwdChan.show();
     }
   );
