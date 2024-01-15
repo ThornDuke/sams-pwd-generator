@@ -1,0 +1,100 @@
+{
+  "name": "sams-pw-gen",
+  "displayName": "Sam's Passwords Generator",
+  "description": "A simple passwords generator for VSCode",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "sams-pw-gen.getpwd8",
+        "title": "Password 8 char long"
+      },
+      {
+        "command": "sams-pw-gen.getpwd9",
+        "title": "Password 9 char long"
+      },
+      {
+        "command": "sams-pw-gen.getpwd10",
+        "title": "Password 10 char long"
+      },
+      {
+        "command": "sams-pw-gen.getpwd11",
+        "title": "Password 11 char long"
+      },
+      {
+        "command": "sams-pw-gen.getpwd12",
+        "title": "Password 12 char long"
+      },
+      {
+        "command": "sams-pw-gen.getpwd13",
+        "title": "Password 13 char long"
+      },
+      {
+        "command": "sams-pw-gen.getpwd14",
+        "title": "Password 14 char long"
+      },
+      {
+        "command": "sams-pw-gen.getpwd15",
+        "title": "Password 15 char long"
+      },
+      {
+        "command": "sams-pw-gen.getpwd16",
+        "title": "Password 16 char long"
+      }
+    ],
+    "configuration": [
+      {
+        "title": "Sam's Password Generator",
+        "properties": {
+          "sampwdgenerator.uppercases": {
+            "type": "string",
+            "default": "BCDEFGHIJKLMNOPQRSTUVWXYZ",
+            "description": "A string containing the uppercase characters used to construct passwords."
+          },
+          "sampwdgenerator.lowercases": {
+            "type": "string",
+            "default": "abcdefghijklmnopqrstuvwxyz",
+            "description": "A string containing the lowercase characters used to construct passwords."
+          },
+          "sampwdgenerator.numbers": {
+            "type": "string",
+            "default": "0123456789",
+            "description": "A string containing the numbers used to construct passwords."
+          },
+          "sampwdgenerator.symbols": {
+            "type": "string",
+            "default": "£$%&*§#@",
+            "description": "A string containing the symbols used to construct passwords."
+          }
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8"
+  }
+}
