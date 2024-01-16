@@ -60,22 +60,22 @@
           "sampwdgenerator.uppercases": {
             "type": "string",
             "default": "BCDEFGHIJKLMNOPQRSTUVWXYZ",
-            "description": "A string containing the uppercase characters used to construct passwords."
+            "markdownDescription": "A string containing the uppercase characters used to construct passwords."
           },
           "sampwdgenerator.lowercases": {
             "type": "string",
             "default": "abcdefghijklmnopqrstuvwxyz",
-            "description": "A string containing the lowercase characters used to construct passwords."
+            "markdownDescription": "A string containing the lowercase characters used to construct passwords."
           },
           "sampwdgenerator.numbers": {
             "type": "string",
             "default": "0123456789",
-            "description": "A string containing the numbers used to construct passwords."
+            "markdownDescription": "A string containing the numbers used to construct passwords."
           },
           "sampwdgenerator.symbols": {
             "type": "string",
             "default": "£$%&*§#@",
-            "description": "A string containing the symbols used to construct passwords."
+            "markdownDescription": "A string containing the symbols used to construct passwords."
           }
         }
       }

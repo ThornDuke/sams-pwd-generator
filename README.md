@@ -54,7 +54,6 @@ Alternatively, you can change the values ​​directly in the configuration fil
 }
 ```
 
----
+## Acknowledgements
 
-<small>The icon is created by
-[Freepik - Flaticon](https://www.flaticon.com)</small>
+The icon is created by [Freepik - Flaticon](https://www.flaticon.com)
