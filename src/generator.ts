@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import crypto from 'node:crypto';
 
 /**
  * if true many logs are generated and sent to the console
@@ -16,6 +17,18 @@ const defaultValues = {
   lowercases: 'abcdefghijklmnopqrstuvwxyz',
   numbers: '0123456789',
   symbols: '£$%&*§#@',
+};
+
+/**
+ * Produces a random integer between _min_ (inclusive)
+ * and _max_ (exclusive), using the `crypto` library
+ *
+ * @param {number} min The lower limit
+ * @param {number} max The upper limit
+ * @returns {number} a random integer number
+ */
+const randomInt = (min: number, max: number): number => {
+  return crypto.randomInt(min, max);
 };
 
 /**
@@ -132,7 +145,7 @@ const shuffleArray = (ar: any[]): any[] => {
   let result = [...ar];
   for (let k = 1; k <= 3; k++) {
     for (let i = result.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
+      const j = randomInt(0, i + 1);
       [result[i], result[j]] = [result[j], result[i]];
     }
   }
@@ -232,17 +245,13 @@ const getPool = (): string[] => {
 };
 
 const getPwd = (length: number): string => {
-  function randInt(num: number): number {
-    return Math.floor(Math.random() * num);
-  }
-
   let result = '';
   const pool = getPool();
 
   do {
     result = '';
     for (let i = 1; i <= length; i++) {
-      const index = randInt(pool.length);
+      const index = randomInt(0, pool.length);
       result += pool[index];
     }
   } while (!isValidPassword(result));
