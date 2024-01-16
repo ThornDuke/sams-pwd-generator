@@ -3,9 +3,14 @@
   "displayName": "Sam's Passwords Generator",
   "description": "A simple passwords generator for VSCode",
   "author": "Thorne Duke",
-  "publisher": "Thorn Duke",
+  "publisher": "ThornDuke",
   "version": "0.1.0",
   "icon": "icon.png",
+  "galleryBanner": {
+    "theme": "dark",
+    "color": "001b33"
+  },
+  "license": "SEE LICENSE IN LICENSE.txt",
   "engines": {
     "vscode": "^1.85.0"
   },

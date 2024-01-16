@@ -64,3 +64,20 @@
   on the VS Code extension marketplace.
 - Automate builds by setting up
   [Continuous Integration](https://code.visualstudio.com/api/working-with-extensions/continuous-integration).
+
+## Publication Notes
+
+You can publish an extension in two ways:
+
+- Automatically, using `vsce publish` command:
+
+```sh
+vsce publish --githubBranch "master"
+```
+
+If you haven't already provided your personal access token with the vsce login
+command above, `vsce` will ask for it.
+
+- Manually, using `vsce package` to package the extension into the installable
+  VSIX format and then uploading it to the
+  [Visual Studio Marketplace publisher management page](https://marketplace.visualstudio.com/manage)
