@@ -4,8 +4,8 @@ import * as vscode from 'vscode';
  * if true many logs are generated and sent to the console
  */
 const $$debugging = false;
-const $$configNick = 'sampwdgenerator';
-const configuration = vscode.workspace.getConfiguration($$configNick);
+const configNick = 'sampwdgenerator';
+const configuration = vscode.workspace.getConfiguration(configNick);
 
 /**
  * Default values ​​to use to construct passwords. The values ​​are taken from
