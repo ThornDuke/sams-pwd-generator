@@ -3,19 +3,24 @@
 import * as vscode from 'vscode';
 
 // The engine of the extension
-import {
-  getPwd8,
-  getPwd9,
-  getPwd10,
-  getPwd11,
-  getPwd12,
-  getPwd13,
-  getPwd14,
-  getPwd15,
-  getPwd16,
-} from './generator';
+import { getPwdList } from './generator';
 
 const pwdChan = vscode.window.createOutputChannel('PwdGenerator');
+
+/**
+ * To construct a line of a numbered list. It takes a number and
+ * a string and returns another string consisting of the number
+ * with a two-digit padding followed by the string.
+ *
+ * @param {number} num
+ * @param {string} str
+ * @returns {string}
+ */
+const formatLine = (num: number, str: string): string => {
+  let start: string = String(num) + '.';
+  start = start.padEnd(3, ' ');
+  return `${start} ${str}`;
+};
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -23,7 +28,10 @@ export function activate(context: vscode.ExtensionContext) {
   let disposableA = vscode.commands.registerCommand(
     'sams-pw-gen.getpwd8',
     () => {
-      pwdChan.append(getPwd8().join('\n'));
+      let lines = getPwdList(8).map((line, index) =>
+        formatLine(index + 1, line)
+      );
+      pwdChan.append(lines.join('\n'));
       pwdChan.append('\n\n');
       pwdChan.show();
     }
@@ -33,7 +41,10 @@ export function activate(context: vscode.ExtensionContext) {
   let disposableB = vscode.commands.registerCommand(
     'sams-pw-gen.getpwd9',
     () => {
-      pwdChan.append(getPwd9().join('\n'));
+      let lines = getPwdList(9).map((line, index) =>
+        formatLine(index + 1, line)
+      );
+      pwdChan.append(lines.join('\n'));
       pwdChan.append('\n\n');
       pwdChan.show();
     }
@@ -43,7 +54,10 @@ export function activate(context: vscode.ExtensionContext) {
   let disposableC = vscode.commands.registerCommand(
     'sams-pw-gen.getpwd10',
     () => {
-      pwdChan.append(getPwd10().join('\n'));
+      let lines = getPwdList(10).map((line, index) =>
+        formatLine(index + 1, line)
+      );
+      pwdChan.append(lines.join('\n'));
       pwdChan.append('\n\n');
       pwdChan.show();
     }
@@ -53,7 +67,10 @@ export function activate(context: vscode.ExtensionContext) {
   let disposableD = vscode.commands.registerCommand(
     'sams-pw-gen.getpwd11',
     () => {
-      pwdChan.append(getPwd11().join('\n'));
+      let lines = getPwdList(11).map((line, index) =>
+        formatLine(index + 1, line)
+      );
+      pwdChan.append(lines.join('\n'));
       pwdChan.append('\n\n');
       pwdChan.show();
     }
@@ -63,7 +80,10 @@ export function activate(context: vscode.ExtensionContext) {
   let disposableE = vscode.commands.registerCommand(
     'sams-pw-gen.getpwd12',
     () => {
-      pwdChan.append(getPwd12().join('\n'));
+      let lines = getPwdList(12).map((line, index) =>
+        formatLine(index + 1, line)
+      );
+      pwdChan.append(lines.join('\n'));
       pwdChan.append('\n\n');
       pwdChan.show();
     }
@@ -73,7 +93,10 @@ export function activate(context: vscode.ExtensionContext) {
   let disposableF = vscode.commands.registerCommand(
     'sams-pw-gen.getpwd13',
     () => {
-      pwdChan.append(getPwd13().join('\n'));
+      let lines = getPwdList(13).map((line, index) =>
+        formatLine(index + 1, line)
+      );
+      pwdChan.append(lines.join('\n'));
       pwdChan.append('\n\n');
       pwdChan.show();
     }
@@ -83,7 +106,10 @@ export function activate(context: vscode.ExtensionContext) {
   let disposableG = vscode.commands.registerCommand(
     'sams-pw-gen.getpwd14',
     () => {
-      pwdChan.append(getPwd14().join('\n'));
+      let lines = getPwdList(14).map((line, index) =>
+        formatLine(index + 1, line)
+      );
+      pwdChan.append(lines.join('\n'));
       pwdChan.append('\n\n');
       pwdChan.show();
     }
@@ -93,7 +119,10 @@ export function activate(context: vscode.ExtensionContext) {
   let disposableH = vscode.commands.registerCommand(
     'sams-pw-gen.getpwd15',
     () => {
-      pwdChan.append(getPwd15().join('\n'));
+      let lines = getPwdList(15).map((line, index) =>
+        formatLine(index + 1, line)
+      );
+      pwdChan.append(lines.join('\n'));
       pwdChan.append('\n\n');
       pwdChan.show();
     }
@@ -103,7 +132,10 @@ export function activate(context: vscode.ExtensionContext) {
   let disposableJ = vscode.commands.registerCommand(
     'sams-pw-gen.getpwd16',
     () => {
-      pwdChan.append(getPwd16().join('\n'));
+      let lines = getPwdList(16).map((line, index) =>
+        formatLine(index + 1, line)
+      );
+      pwdChan.append(lines.join('\n'));
       pwdChan.append('\n\n');
       pwdChan.show();
     }

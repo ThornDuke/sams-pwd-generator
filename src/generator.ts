@@ -260,92 +260,16 @@ const getPwd = (length: number): string => {
   return result;
 };
 
-export const getPwd8 = (): string[] => {
+export const getPwdList = (num: number): string[] => {
   let result = [];
   for (let i = 1; i <= 10; i++) {
-    result.push(getPwd(8));
+    result.push(getPwd(num));
   }
   return result;
 };
-
-export const getPwd9 = (): string[] => {
-  let result = [];
-  for (let i = 1; i <= 10; i++) {
-    result.push(getPwd(9));
-  }
-  return result;
-};
-
-export const getPwd10 = (): string[] => {
-  let result = [];
-  for (let i = 1; i <= 10; i++) {
-    result.push(getPwd(10));
-  }
-  return result;
-};
-
-export const getPwd11 = (): string[] => {
-  let result = [];
-  for (let i = 1; i <= 10; i++) {
-    result.push(getPwd(11));
-  }
-  return result;
-};
-
-export const getPwd12 = (): string[] => {
-  let result = [];
-  for (let i = 1; i <= 10; i++) {
-    result.push(getPwd(12));
-  }
-  return result;
-};
-
-export const getPwd13 = (): string[] => {
-  let result = [];
-  for (let i = 1; i <= 10; i++) {
-    result.push(getPwd(13));
-  }
-  return result;
-};
-
-export const getPwd14 = (): string[] => {
-  let result = [];
-  for (let i = 1; i <= 10; i++) {
-    result.push(getPwd(14));
-  }
-  return result;
-};
-
-export const getPwd15 = (): string[] => {
-  let result = [];
-  for (let i = 1; i <= 10; i++) {
-    result.push(getPwd(15));
-  }
-  return result;
-};
-
-export const getPwd16 = (): string[] => {
-  let result = [];
-  for (let i = 1; i <= 10; i++) {
-    result.push(getPwd(16));
-  }
-  return result;
-};
-
-/* ================================================== */
 
 if ($$debugging) {
-  console.log(getPwd8());
-  console.log(getPwd9());
-  console.log(getPwd10());
-  console.log(getPwd11());
-  console.log(getPwd12());
-  console.log(getPwd13());
-  console.log(getPwd14());
-  console.log(getPwd15());
-  console.log(getPwd16());
-  console.log(getPwd16());
-  console.log(getPwd16());
-  console.log(getPwd16());
-  console.log(getPwd16());
+  console.log('§> getPwdList(10)', getPwdList(10));
 }
+
+// End of file generator.ts

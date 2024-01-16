@@ -1,4 +1,4 @@
-# Sam's Passwords Generator
+# <img src="icon.png" alt="package icon" width="50px"/> Sam's Passwords Generator
 
 This extension allows you to easily create passwords of different lengths, from
 8 to 16 characters. Passwords all have at least one uppercase character, one
@@ -53,3 +53,8 @@ Alternatively, you can change the values ​​directly in the configuration fil
   "sampwdgenerator.symbols": "£$%&*§#@"
 }
 ```
+
+---
+
+<small>The icon is created by
+[Freepik - Flaticon](https://www.flaticon.com)</small>
