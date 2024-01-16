@@ -1,7 +1,7 @@
 # Change Log
 
 <!--
-## [version.subversion.fix] - yyyy-month-day
+## [major.minor.patch] - yyyy-mm-dd
 
 ### Added
 
@@ -22,6 +22,7 @@
 - LICENCE (GNU 3.0)
 - `package.json`: _publisher_ line
 - Using `esbuild`
+- Opened an Azure Devops account
 
 ### Fixed
 

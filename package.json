@@ -10,12 +10,15 @@
     "theme": "dark",
     "color": "001b33"
   },
-  "license": "SEE LICENSE IN LICENSE.txt",
+  "license": "LICENSE",
   "engines": {
     "vscode": "^1.85.0"
   },
   "categories": [
     "Other"
+  ],
+  "keywords": [
+    "passwords"
   ],
   "activationEvents": [],
   "main": "./out/extension.js",
