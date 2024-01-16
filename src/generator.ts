@@ -244,6 +244,12 @@ const getPool = (): string[] => {
   return result;
 };
 
+/**
+ * Creates a password of _length_ length.
+ *
+ * @param length Length of the password
+ * @returns {string} the password
+ */
 const getPwd = (length: number): string => {
   let result = '';
   const pool = getPool();
@@ -269,10 +275,18 @@ const getPwd = (length: number): string => {
   return result;
 };
 
-export const getPwdList = (num: number): string[] => {
+/**
+ * Produces an array containing 10 passwords of length equal
+ * to _length_ characters. It is the method called by the
+ * extension to produce and print password lists.
+ *
+ * @param length Length of the passwords
+ * @returns {string[]} An array of strings
+ */
+export const getPwdList = (length: number): string[] => {
   let result = [];
   for (let i = 1; i <= 10; i++) {
-    result.push(getPwd(num));
+    result.push(getPwd(length));
   }
   return result;
 };
