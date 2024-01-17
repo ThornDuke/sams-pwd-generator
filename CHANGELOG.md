@@ -14,15 +14,14 @@
 
 ## [Unreleased]
 
+- A lot of bugfixing and refactoring
+
 ### Added
 
 - Icon
-- Opened a github repo
 - README
 - LICENCE (GNU 3.0)
-- `package.json`: _publisher_ line
 - Using `esbuild`
-- Opened an Azure Devops account
 
 ### Fixed
 
