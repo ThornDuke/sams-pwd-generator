@@ -36,7 +36,7 @@ const formatLine = (num: number, str: string): string => {
  *
  * @param length The length of the passwords
  */
-const createShowPwds = (length: number) => {
+const createAndShowPwds = (length: number) => {
   let lines = getPwdList(length).map((line, index) =>
     formatLine(index + 1, line)
   );
@@ -49,57 +49,16 @@ const createShowPwds = (length: number) => {
  * Your extension is activated the very first time the command is executed
  */
 export function activate(context: vscode.ExtensionContext) {
-  let disposable8 = vscode.commands.registerCommand('sams-pw-gen.getpwd8', () =>
-    createShowPwds(8)
-  );
-  context.subscriptions.push(disposable8);
-
-  let disposable9 = vscode.commands.registerCommand('sams-pw-gen.getpwd9', () =>
-    createShowPwds(9)
-  );
-  context.subscriptions.push(disposable9);
-
-  let disposable10 = vscode.commands.registerCommand(
-    'sams-pw-gen.getpwd10',
-    () => createShowPwds(10)
-  );
-  context.subscriptions.push(disposable10);
-
-  let disposable11 = vscode.commands.registerCommand(
-    'sams-pw-gen.getpwd11',
-    () => createShowPwds(11)
-  );
-  context.subscriptions.push(disposable11);
-
-  let disposable12 = vscode.commands.registerCommand(
-    'sams-pw-gen.getpwd12',
-    () => createShowPwds(12)
-  );
-  context.subscriptions.push(disposable12);
-
-  let disposable13 = vscode.commands.registerCommand(
-    'sams-pw-gen.getpwd13',
-    () => createShowPwds(13)
-  );
-  context.subscriptions.push(disposable13);
-
-  let disposable14 = vscode.commands.registerCommand(
-    'sams-pw-gen.getpwd14',
-    () => createShowPwds(15)
-  );
-  context.subscriptions.push(disposable14);
-
-  let disposable15 = vscode.commands.registerCommand(
-    'sams-pw-gen.getpwd15',
-    () => createShowPwds(15)
-  );
-  context.subscriptions.push(disposable15);
-
-  let disposable16 = vscode.commands.registerCommand(
-    'sams-pw-gen.getpwd16',
-    () => createShowPwds(16)
-  );
-  context.subscriptions.push(disposable16);
+  // The string passed to registerCommand must match
+  // one of the commands listed in `package.json` under
+  // the `contributes.commands` key
+  for (let i = 8; i <= 16; i++) {
+    context.subscriptions.push(
+      vscode.commands.registerCommand(`sams-pw-gen.getpwd${i}`, () =>
+        createAndShowPwds(i)
+      )
+    );
+  }
 }
 
 // This method is called when your extension is deactivated
