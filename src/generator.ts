@@ -1,12 +1,8 @@
 import * as vscode from 'vscode';
 import crypto from 'node:crypto';
+import { $$debugging, configKey } from './globals';
 
-/**
- * if true many logs are generated and sent to the console
- */
-const $$debugging = false;
-const configNick = 'sampwdgenerator';
-const configuration = vscode.workspace.getConfiguration(configNick);
+const configuration = vscode.workspace.getConfiguration(configKey);
 
 /**
  * Default values ​​to use to construct passwords. The values ​​are taken from
@@ -28,14 +24,20 @@ const defaultValues = {
  * @returns {number} a random integer number
  */
 const randomInt = (min: number, max: number): number => {
-  return crypto.randomInt(min, max);
+  const result = crypto.randomInt(min, max);
+
+  if ($$debugging) {
+    console.log('§> randomInt', { result });
+  }
+
+  return result;
 };
 
 /**
  * Gets the list of uppercase letters from the configuration
  * file or from the default values.
  *
- * @returns {string[]} Array
+ * @returns {string[]} A list of upeercase chars
  */
 const getUpperCases = (): string[] => {
   let result = [];
@@ -61,7 +63,7 @@ const getUpperCases = (): string[] => {
  * Gets the list of lowercase letters from the configuration file
  * or from the default values.
  *
- * @returns {string[]} Array
+ * @returns {string[]} A list of lowercase chars
  */
 const getLowerCases = (): string[] => {
   let result = [];
@@ -87,7 +89,7 @@ const getLowerCases = (): string[] => {
  * Gets the list of numbers from the configuration file
  * or from the default values.
  *
- * @returns {string[]} Array
+ * @returns {string[]} A list of numbers
  */
 const getNumbers = (): string[] => {
   let result = [];
@@ -110,9 +112,10 @@ const getNumbers = (): string[] => {
 };
 
 /**
- * Gets the list of symbols from the configuration file or from the default values.
+ * Gets the list of symbols from the configuration file
+ * or from the default values.
  *
- * @returns {string[]} Array
+ * @returns {string[]} A list of special chars
  */
 const getSymbols = (): string[] => {
   let result = [];
@@ -135,13 +138,15 @@ const getSymbols = (): string[] => {
 };
 
 /**
- * Takes an array of elements of any type and returns an array with the same elements,
- * but in random order. Uses the Fisher-Yates Sorting Algorithm applied three times.
+ * Takes an array of elements of strings and returns
+ * an array with the same elements, but in random order.
+ * Uses the Fisher-Yates Sorting Algorithm applied three
+ * times.
  *
- * @param {any[]} ar An array of any item
- * @returns {any[]} an array of any items
+ * @param {string[]} ar An array of strings
+ * @returns {string[]} An shuffled array of string
  */
-const shuffleArray = (ar: any[]): any[] => {
+const shuffleArray = (ar: string[]): string[] => {
   let result = [...ar];
   for (let k = 1; k <= 3; k++) {
     for (let i = result.length - 1; i > 0; i--) {
@@ -161,8 +166,8 @@ const shuffleArray = (ar: any[]): any[] => {
 };
 
 /**
- * Takes a string and checks that it contains at least one character among
- * those contained in a given array
+ * Takes a string and checks that it contains at least one
+ * character among those contained in a given array
  *
  * @param {string} str the password to check
  * @param {string[]} strArr the array used to check the password
@@ -191,8 +196,9 @@ const checkPassword = (str: string, strArr: string[]): boolean => {
 };
 
 /**
- * Takes a password (a string) and checks that it contains at least one uppercase
- * character, one lowercase character, one number and one special character.
+ * Takes a password (a string) and checks that it contains at least
+ * one uppercase character, one lowercase character, one number and
+ * one special character.
  *
  * @param {string} str the password to check
  * @returns {boolean} true if the password is valid, false otherwise.
@@ -227,9 +233,9 @@ const isValidPassword = (str: string): boolean => {
 };
 
 /**
- * Constructs the character array to use to construct the password. The array
- * consists of all uppercase and lowercase characters, numbers and symbols
- * mixed together in various ways.
+ * Constructs the character array to use to construct the password.
+ * The array consists of all uppercase and lowercase characters,
+ * numbers and symbols mixed together in various ways.
  *
  * @returns {string[]}
  */
