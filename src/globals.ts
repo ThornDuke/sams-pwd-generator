@@ -12,3 +12,5 @@ export const $$debugging = false;
  * !!! `contributes.configuration.properties`        !!!
  */
 export const configKey = 'sampwdgenerator';
+
+// End of file globals.ts

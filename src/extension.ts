@@ -1,11 +1,19 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
+/**
+ * The module 'vscode' contains the VS Code extensibility API
+ * Import the module and reference it with the alias vscode
+ * in your code below
+ */
 import * as vscode from 'vscode';
 
-// The engine of the extension
+/**
+ * The engine of the extension
+ */
 import { getPwdList } from './generator';
 
-const pwdChan = vscode.window.createOutputChannel('PwdGenerator');
+/**
+ * The vscode panel `output` channel where passwords will be displayed
+ */
+const pwdChannel = vscode.window.createOutputChannel('PwdGenerator');
 
 /**
  * To construct a line of a numbered list. It takes a number and
@@ -22,126 +30,79 @@ const formatLine = (num: number, str: string): string => {
   return `${start} ${str}`;
 };
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
+/**
+ * Creates passwords _length_ characters long, formats
+ * them and show them in the vscode `output` panel
+ *
+ * @param length The length of the passwords
+ */
+const createShowPwds = (length: number) => {
+  let lines = getPwdList(length).map((line, index) =>
+    formatLine(index + 1, line)
+  );
+  pwdChannel.append(`${lines.join('\n')}\n\n`);
+  pwdChannel.show();
+};
+
+/**
+ * This method is called when your extension is activated
+ * Your extension is activated the very first time the command is executed
+ */
 export function activate(context: vscode.ExtensionContext) {
-  let disposableA = vscode.commands.registerCommand(
-    'sams-pw-gen.getpwd8',
-    () => {
-      let lines = getPwdList(8).map((line, index) =>
-        formatLine(index + 1, line)
-      );
-      pwdChan.append(lines.join('\n'));
-      pwdChan.append('\n\n');
-      pwdChan.show();
-    }
+  let disposable8 = vscode.commands.registerCommand('sams-pw-gen.getpwd8', () =>
+    createShowPwds(8)
   );
-  context.subscriptions.push(disposableA);
+  context.subscriptions.push(disposable8);
 
-  let disposableB = vscode.commands.registerCommand(
-    'sams-pw-gen.getpwd9',
-    () => {
-      let lines = getPwdList(9).map((line, index) =>
-        formatLine(index + 1, line)
-      );
-      pwdChan.append(lines.join('\n'));
-      pwdChan.append('\n\n');
-      pwdChan.show();
-    }
+  let disposable9 = vscode.commands.registerCommand('sams-pw-gen.getpwd9', () =>
+    createShowPwds(9)
   );
-  context.subscriptions.push(disposableB);
+  context.subscriptions.push(disposable9);
 
-  let disposableC = vscode.commands.registerCommand(
+  let disposable10 = vscode.commands.registerCommand(
     'sams-pw-gen.getpwd10',
-    () => {
-      let lines = getPwdList(10).map((line, index) =>
-        formatLine(index + 1, line)
-      );
-      pwdChan.append(lines.join('\n'));
-      pwdChan.append('\n\n');
-      pwdChan.show();
-    }
+    () => createShowPwds(10)
   );
-  context.subscriptions.push(disposableC);
+  context.subscriptions.push(disposable10);
 
-  let disposableD = vscode.commands.registerCommand(
+  let disposable11 = vscode.commands.registerCommand(
     'sams-pw-gen.getpwd11',
-    () => {
-      let lines = getPwdList(11).map((line, index) =>
-        formatLine(index + 1, line)
-      );
-      pwdChan.append(lines.join('\n'));
-      pwdChan.append('\n\n');
-      pwdChan.show();
-    }
+    () => createShowPwds(11)
   );
-  context.subscriptions.push(disposableD);
+  context.subscriptions.push(disposable11);
 
-  let disposableE = vscode.commands.registerCommand(
+  let disposable12 = vscode.commands.registerCommand(
     'sams-pw-gen.getpwd12',
-    () => {
-      let lines = getPwdList(12).map((line, index) =>
-        formatLine(index + 1, line)
-      );
-      pwdChan.append(lines.join('\n'));
-      pwdChan.append('\n\n');
-      pwdChan.show();
-    }
+    () => createShowPwds(12)
   );
-  context.subscriptions.push(disposableE);
+  context.subscriptions.push(disposable12);
 
-  let disposableF = vscode.commands.registerCommand(
+  let disposable13 = vscode.commands.registerCommand(
     'sams-pw-gen.getpwd13',
-    () => {
-      let lines = getPwdList(13).map((line, index) =>
-        formatLine(index + 1, line)
-      );
-      pwdChan.append(lines.join('\n'));
-      pwdChan.append('\n\n');
-      pwdChan.show();
-    }
+    () => createShowPwds(13)
   );
-  context.subscriptions.push(disposableF);
+  context.subscriptions.push(disposable13);
 
-  let disposableG = vscode.commands.registerCommand(
+  let disposable14 = vscode.commands.registerCommand(
     'sams-pw-gen.getpwd14',
-    () => {
-      let lines = getPwdList(14).map((line, index) =>
-        formatLine(index + 1, line)
-      );
-      pwdChan.append(lines.join('\n'));
-      pwdChan.append('\n\n');
-      pwdChan.show();
-    }
+    () => createShowPwds(15)
   );
-  context.subscriptions.push(disposableG);
+  context.subscriptions.push(disposable14);
 
-  let disposableH = vscode.commands.registerCommand(
+  let disposable15 = vscode.commands.registerCommand(
     'sams-pw-gen.getpwd15',
-    () => {
-      let lines = getPwdList(15).map((line, index) =>
-        formatLine(index + 1, line)
-      );
-      pwdChan.append(lines.join('\n'));
-      pwdChan.append('\n\n');
-      pwdChan.show();
-    }
+    () => createShowPwds(15)
   );
-  context.subscriptions.push(disposableH);
+  context.subscriptions.push(disposable15);
 
-  let disposableJ = vscode.commands.registerCommand(
+  let disposable16 = vscode.commands.registerCommand(
     'sams-pw-gen.getpwd16',
-    () => {
-      let lines = getPwdList(16).map((line, index) =>
-        formatLine(index + 1, line)
-      );
-      pwdChan.append(lines.join('\n'));
-      pwdChan.append('\n\n');
-      pwdChan.show();
-    }
+    () => createShowPwds(16)
   );
-  context.subscriptions.push(disposableJ);
+  context.subscriptions.push(disposable16);
 }
 
 // This method is called when your extension is deactivated
 export function deactivate() {}
+
+// End of file extension.ts
