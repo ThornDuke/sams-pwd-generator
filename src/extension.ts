@@ -54,9 +54,9 @@ export function activate(context: vscode.ExtensionContext) {
   // the `contributes.commands` key
   for (let i = 8; i <= 16; i++) {
     context.subscriptions.push(
-      vscode.commands.registerCommand(`sams-pw-gen.getpwd${i}`, () =>
-        createAndShowPwds(i)
-      )
+      vscode.commands.registerCommand(`sams-pw-gen.getpwd${i}`, () => {
+        createAndShowPwds(i);
+      })
     );
   }
 }
