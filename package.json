@@ -8,7 +8,7 @@
   "icon": "icon.png",
   "galleryBanner": {
     "theme": "dark",
-    "color": "001b33"
+    "color": "#001b33"
   },
   "license": "LICENSE",
   "engines": {
