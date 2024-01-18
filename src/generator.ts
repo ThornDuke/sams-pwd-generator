@@ -26,9 +26,7 @@ const defaultValues = {
 const randomInt = (min: number, max: number): number => {
   const result = crypto.randomInt(min, max);
 
-  if ($$debugging) {
-    console.log('§> randomInt', { result });
-  }
+  if ($$debugging) console.log('§> randomInt', { result });
 
   return result;
 };
@@ -49,12 +47,7 @@ const getUpperCases = (): string[] => {
     result = defaultValues.uppercases.split('');
   }
 
-  if ($$debugging) {
-    console.log('§> getUpperCases', {
-      values: values,
-      result: result,
-    });
-  }
+  if ($$debugging) console.log('§> getUpperCases', { values, result });
 
   return result;
 };
@@ -75,12 +68,7 @@ const getLowerCases = (): string[] => {
     result = defaultValues.lowercases.split('');
   }
 
-  if ($$debugging) {
-    console.log('§> getLowerCases', {
-      values: values,
-      result: result,
-    });
-  }
+  if ($$debugging) console.log('§> getLowerCases', { values, result });
 
   return result;
 };
@@ -101,12 +89,7 @@ const getNumbers = (): string[] => {
     result = defaultValues.numbers.split('');
   }
 
-  if ($$debugging) {
-    console.log('§> getNumbers', {
-      values: values,
-      result: result,
-    });
-  }
+  if ($$debugging) console.log('§> getNumbers', { values, result });
 
   return result;
 };
@@ -127,12 +110,7 @@ const getSymbols = (): string[] => {
     result = defaultValues.symbols.split('');
   }
 
-  if ($$debugging) {
-    console.log('§> getSymbols', {
-      values: values,
-      result: result,
-    });
-  }
+  if ($$debugging) console.log('§> getSymbols', { values, result });
 
   return result;
 };
@@ -144,7 +122,7 @@ const getSymbols = (): string[] => {
  * times.
  *
  * @param {string[]} ar An array of strings
- * @returns {string[]} An shuffled array of string
+ * @returns {string[]} A shuffled array of string
  */
 const shuffleArray = (ar: string[]): string[] => {
   let result = [...ar];
@@ -155,12 +133,7 @@ const shuffleArray = (ar: string[]): string[] => {
     }
   }
 
-  if ($$debugging) {
-    console.log('§> shuffleArray', {
-      ar: ar,
-      result: result,
-    });
-  }
+  if ($$debugging) console.log('§> shuffleArray', { ar, result });
 
   return result;
 };
@@ -184,13 +157,7 @@ const checkPassword = (str: string, strArr: string[]): boolean => {
     }
   }
 
-  if ($$debugging) {
-    console.log('§> checkPassword', {
-      str: str,
-      strArr: strArr,
-      result: result,
-    });
-  }
+  if ($$debugging) console.log('§> checkPassword', { str, strArr, result });
 
   return result;
 };
@@ -206,28 +173,12 @@ const checkPassword = (str: string, strArr: string[]): boolean => {
 const isValidPassword = (str: string): boolean => {
   let result = true;
 
-  if (!checkPassword(str, getUpperCases())) {
-    result = false;
-  }
+  if (!checkPassword(str, getUpperCases())) result = false;
+  if (!checkPassword(str, getLowerCases())) result = false;
+  if (!checkPassword(str, getNumbers())) result = false;
+  if (!checkPassword(str, getSymbols())) result = false;
 
-  if (!checkPassword(str, getLowerCases())) {
-    result = false;
-  }
-
-  if (!checkPassword(str, getNumbers())) {
-    result = false;
-  }
-
-  if (!checkPassword(str, getSymbols())) {
-    result = false;
-  }
-
-  if ($$debugging) {
-    console.log('§> isValidPassword', {
-      str: str,
-      result: result,
-    });
-  }
+  if ($$debugging) console.log('§> isValidPassword', { str, result });
 
   return result;
 };
@@ -247,6 +198,10 @@ const getPool = (): string[] => {
 
   let result: string[] = [];
   result = shuffleArray(result.concat(uCases, lCases, numbers, symbols));
+
+  if ($$debugging)
+    console.log('§> getPool', { uCases, lCases, numbers, symbols, result });
+
   return result;
 };
 
@@ -270,13 +225,7 @@ const getPwd = (length: number): string => {
 
   result = shuffleArray(result.split('')).join('');
 
-  if ($$debugging) {
-    console.log('§> getPwd', {
-      length: length,
-      pool: pool,
-      result: result,
-    });
-  }
+  if ($$debugging) console.log('§> getPwd', { length, pool, result });
 
   return result;
 };
@@ -294,11 +243,10 @@ export const getPwdList = (length: number): string[] => {
   for (let i = 1; i <= 10; i++) {
     result.push(getPwd(length));
   }
+
+  if ($$debugging) console.log('§> getPwdList', { length, result });
+
   return result;
 };
-
-if ($$debugging) {
-  console.log('§> getPwdList(10)', getPwdList(10));
-}
 
 // End of file generator.ts
