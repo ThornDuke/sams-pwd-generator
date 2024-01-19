@@ -18,7 +18,6 @@
 ## [1.0.0] - 2024-01-19
 
 - A lot of bugfixing and refactoring
-- Published on the VSCode marketplace
 
 ### Added
 
