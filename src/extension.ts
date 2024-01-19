@@ -16,17 +16,21 @@ import { getPwdList } from './generator';
 const pwdChannel = vscode.window.createOutputChannel('PwdGenerator');
 
 /**
- * To construct a line of a numbered list. It takes a number and
- * a string and returns another string consisting of the number
- * with a two-digit padding followed by the string.
+ * It is used to construct a row of a numbered list.
+ * It takes a number `num` and a string `str`, calculates
+ * the correct padding based on the number `maxNum` which
+ * represents the highest number that can be assumed by
+ * `num`, and returns a correctly formatted string.
  *
  * @param {number} num
+ * @param {number} maxNum
  * @param {string} str
  * @returns {string}
  */
-const formatLine = (num: number, str: string): string => {
+const formatLine = (num: number, maxNum: number, str: string): string => {
+  const padding = String(maxNum).length + 2;
   let start: string = String(num) + '.';
-  start = start.padEnd(3, ' ');
+  start = start.padEnd(padding, ' ');
   return `${start} ${str}`;
 };
 
@@ -37,8 +41,8 @@ const formatLine = (num: number, str: string): string => {
  * @param length The length of the passwords
  */
 const createAndShowPwds = (length: number) => {
-  let lines = getPwdList(length).map((line, index) =>
-    formatLine(index + 1, line)
+  let lines = getPwdList(length).map((line, index, currArray) =>
+    formatLine(index + 1, currArray.length, line)
   );
   pwdChannel.append(`${lines.join('\n')}\n\n`);
   pwdChannel.show();

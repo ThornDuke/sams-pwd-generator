@@ -240,7 +240,7 @@ const getPwd = (length: number): string => {
  */
 export const getPwdList = (length: number): string[] => {
   let result = [];
-  for (let i = 1; i <= 10; i++) {
+  for (let i = 1; i <= 1000; i++) {
     result.push(getPwd(length));
   }
 
