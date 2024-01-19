@@ -163,9 +163,16 @@ const checkPassword = (
     }
   }
 
-  if (stack.length) >= occurrences result = true;
+  if (stack.length >= occurrences) result = true;
 
-  if ($$debugging) console.log('§> checkPassword', { str, occurrences, strArr, stack, result });
+  if ($$debugging)
+    console.log('§> checkPassword', {
+      str,
+      occurrences,
+      strArr,
+      stack,
+      result,
+    });
 
   return result;
 };
