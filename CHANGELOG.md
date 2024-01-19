@@ -2,6 +2,7 @@
 
 <!--
 ## [major.minor.patch] - yyyy-mm-dd
+(When publish put this number into <package.json>.version)
 
 ### Added
 
@@ -10,11 +11,14 @@
 ### Fixed
 ### Changed
 ### Removed
+
+[Unreleased]
 -->
 
-## [Unreleased]
+## [1.0.0] - 2024-01-19
 
 - A lot of bugfixing and refactoring
+- Published on the VSCode marketplace
 
 ### Added
 

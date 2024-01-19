@@ -17,14 +17,14 @@ const defaultValues = {
 
 /**
  * Produces a random integer between _min_ (inclusive)
- * and _max_ (exclusive), using the `crypto` library
+ * and _max_ (inclusive), using the `crypto` library
  *
  * @param {number} min The lower limit
  * @param {number} max The upper limit
  * @returns {number} a random integer number
  */
 const randomInt = (min: number, max: number): number => {
-  const result = crypto.randomInt(min, max);
+  const result = crypto.randomInt(min, max + 1);
 
   if ($$debugging) console.log('§> randomInt', { result });
 
@@ -128,7 +128,7 @@ const shuffleArray = (ar: string[]): string[] => {
   let result = [...ar];
   for (let k = 1; k <= 3; k++) {
     for (let i = result.length - 1; i > 0; i--) {
-      const j = randomInt(0, i + 1);
+      const j = randomInt(0, i);
       [result[i], result[j]] = [result[j], result[i]];
     }
   }
@@ -218,7 +218,7 @@ const getPwd = (length: number): string => {
   do {
     result = '';
     for (let i = 1; i <= length; i++) {
-      const index = randomInt(0, pool.length);
+      const index = randomInt(0, pool.length - 1);
       result += pool[index];
     }
   } while (!isValidPassword(result));
