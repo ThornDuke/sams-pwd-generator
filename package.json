@@ -4,7 +4,7 @@
   "description": "A simple passwords generator for VSCode",
   "author": "Thorne Duke",
   "publisher": "ThornDuke",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "icon": "icon.png",
   "galleryBanner": {
     "theme": "dark",

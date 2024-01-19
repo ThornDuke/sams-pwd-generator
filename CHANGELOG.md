@@ -12,12 +12,21 @@
 ### Changed
 ### Removed
 
-[Unreleased]
+## [TODO]
+
+- [ ] Add a configuration parameter to change the number of
+      passwords produced for each call.
+- [ ] Add a configuration parameter to change the minimum
+      number of uppercase, lowercase, number, and symbol
+      characters that must be present in each password.
+
+## [Unreleased]
 -->
 
-## [1.0.0] - 2024-01-19
+## [0.2.0] - 2024-01-19
 
 - A lot of bugfixing and refactoring
+- Pre-publish
 
 ### Added
 
@@ -34,6 +43,7 @@
 
 - We no longer use `Math.random()` to produce random numbers but
   `crypto.randomInt()`
+- Changed some methods to allow for future development of some features.
 
 ## [0.1.0] - 2024-01-15
 

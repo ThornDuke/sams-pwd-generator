@@ -139,25 +139,33 @@ const shuffleArray = (ar: string[]): string[] => {
 };
 
 /**
- * Takes a string and checks that it contains at least one
- * character among those contained in a given array
+ * Takes a string and checks that it contains at
+ * least `occurrences` characters among those
+ * contained in a given array
  *
  * @param {string} str the password to check
+ * @param {number} occurrences How many chars in `str` are contained in `strArr`
  * @param {string[]} strArr the array used to check the password
  * @returns {boolean}
  */
-const checkPassword = (str: string, strArr: string[]): boolean => {
+const checkPassword = (
+  str: string,
+  occurrences: number,
+  strArr: string[]
+): boolean => {
   let result = false;
+  let stack = '';
 
   for (let i = 0; i < str.length; i++) {
     const char = str[i];
     if (strArr.includes(char)) {
-      result = true;
-      break;
+      stack += char;
     }
   }
 
-  if ($$debugging) console.log('§> checkPassword', { str, strArr, result });
+  if (stack.length) >= occurrences result = true;
+
+  if ($$debugging) console.log('§> checkPassword', { str, occurrences, strArr, stack, result });
 
   return result;
 };
@@ -173,10 +181,10 @@ const checkPassword = (str: string, strArr: string[]): boolean => {
 const isValidPassword = (str: string): boolean => {
   let result = true;
 
-  if (!checkPassword(str, getUpperCases())) result = false;
-  if (!checkPassword(str, getLowerCases())) result = false;
-  if (!checkPassword(str, getNumbers())) result = false;
-  if (!checkPassword(str, getSymbols())) result = false;
+  if (!checkPassword(str, 1, getUpperCases())) result = false;
+  if (!checkPassword(str, 1, getLowerCases())) result = false;
+  if (!checkPassword(str, 1, getNumbers())) result = false;
+  if (!checkPassword(str, 1, getSymbols())) result = false;
 
   if ($$debugging) console.log('§> isValidPassword', { str, result });
 
@@ -240,7 +248,7 @@ const getPwd = (length: number): string => {
  */
 export const getPwdList = (length: number): string[] => {
   let result = [];
-  for (let i = 1; i <= 1000; i++) {
+  for (let i = 1; i <= 10; i++) {
     result.push(getPwd(length));
   }
 
