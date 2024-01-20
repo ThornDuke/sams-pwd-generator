@@ -14,12 +14,13 @@
 
 ## [TODO]
 
-- [ ] Add a configuration parameter to change the number of
+- [x] Add a configuration parameter to change the number of
       passwords produced for each call.
-- [ ] Add a configuration parameter to change the minimum
+- [x] Add a configuration parameter to change the minimum
       number of uppercase, lowercase, number, and symbol
       characters that must be present in each
       password (1 or 2, not more).
+- [x] Change README with new featiures.
 
 ## [Unreleased]
 -->
@@ -35,6 +36,11 @@
 - README
 - LICENCE (GNU 3.0)
 - Using `esbuild`
+- A configuration parameter to change the number of passwords produced for each
+  call.
+- A configuration parameter to change the minimum number of uppercase,
+  lowercase, number, and symbol characters that must be present in each password
+  (1 or 2, not more).
 
 ### Fixed
 

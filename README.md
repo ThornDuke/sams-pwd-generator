@@ -4,7 +4,10 @@ This extension allows you to easily create passwords of different lengths, from
 8 to 16 characters. Passwords all have at least one uppercase character, one
 lowercase character, one number, and one special character.
 
-You can configure the set of characters that will be used to create passwords.
+You can configure the character set that will be used to create passwords, the
+number of passwords produced with every 'spin', and the minimum number of
+uppercase characters, lowercase characters, numbers or symbols that must be
+contained in each password.
 
 ## Installation
 
@@ -48,9 +51,13 @@ Alternatively, you can change the values ​​directly in the configuration fil
 ```json
 {
   "sampwdgenerator.uppercases": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  "sampwdgenerator.uppercaseOccurrences": 1,
   "sampwdgenerator.lowercases": "abcdefghijklmnopqrstuvwxyz",
+  "sampwdgenerator.lowercaseOccurrences": 1,
   "sampwdgenerator.numbers": "0123456789",
-  "sampwdgenerator.symbols": "£$%&*§#@"
+  "sampwdgenerator.numberOccurrences": 1,
+  "sampwdgenerator.symbols": "£$%&*§#@",
+  "sampwdgenerator.symbolOccurrences": 1
 }
 ```
 
