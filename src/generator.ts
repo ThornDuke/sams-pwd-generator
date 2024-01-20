@@ -5,22 +5,6 @@ import { $$debugging, configKey } from './globals';
 const configuration = vscode.workspace.getConfiguration(configKey);
 if ($$debugging) console.log('§> ROOT', { configuration });
 
-/*
-{
-    "configuration": {
-        "passwords": 8,
-        "uppercases": "BCDEFGHIJKLMNOPQRSTUVWXYZ",
-        "uppercaseOccurrences": 1,
-        "lowercases": "abcdefghijklmnopqrstuvwxyz",
-        "lowercaseOccurrences": 1,
-        "numbers": "0123456789",
-        "numberOccurrences": 1,
-        "symbols": "£$%&*§#@",
-        "symbolOccurrences": 1
-    }
-}
-*/
-
 /**
  * Default values ​​to use to construct passwords. The values ​​are taken from
  * the configuration file but, failing that, the default values ​​are used.
