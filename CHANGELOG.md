@@ -14,18 +14,14 @@
 
 ## [TODO]
 
-- [x] Add a configuration parameter to change the number of
-      passwords produced for each call.
-- [x] Add a configuration parameter to change the minimum
-      number of uppercase, lowercase, number, and symbol
-      characters that must be present in each
-      password (1 or 2, not more).
-- [x] Change README with new featiures.
-
 ## [Unreleased]
 -->
 
-## [0.2.0] - ????-??-??
+## [1.0.0] - 2024-01-20
+
+- First release
+
+## [0.2.0] - 2024-01-19
 
 - A lot of bugfixing and refactoring
 - Pre-publish
