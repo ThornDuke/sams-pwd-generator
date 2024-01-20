@@ -3,16 +3,38 @@ import crypto from 'node:crypto';
 import { $$debugging, configKey } from './globals';
 
 const configuration = vscode.workspace.getConfiguration(configKey);
+if ($$debugging) console.log('§> ROOT', { configuration });
+
+/*
+{
+    "configuration": {
+        "passwords": 8,
+        "uppercases": "BCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "uppercaseOccurrences": 1,
+        "lowercases": "abcdefghijklmnopqrstuvwxyz",
+        "lowercaseOccurrences": 1,
+        "numbers": "0123456789",
+        "numberOccurrences": 1,
+        "symbols": "£$%&*§#@",
+        "symbolOccurrences": 1
+    }
+}
+*/
 
 /**
  * Default values ​​to use to construct passwords. The values ​​are taken from
  * the configuration file but, failing that, the default values ​​are used.
  */
 const defaultValues = {
+  passwords: 8,
   uppercases: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  uppercaseOccurrences: 1,
   lowercases: 'abcdefghijklmnopqrstuvwxyz',
+  lowercaseOccurrences: 1,
   numbers: '0123456789',
+  numberOccurrences: 1,
   symbols: '£$%&*§#@',
+  symbolOccurrences: 1,
 };
 
 /**
@@ -53,6 +75,28 @@ const getUpperCases = (): string[] => {
 };
 
 /**
+ * Gets the amount of uppercase letters occurrences from the configuration
+ * file or from the default values.
+ *
+ * @returns {number}
+ */
+const getUpperCasesOccurrences = (): number => {
+  let result = 0;
+
+  let value = configuration.get('uppercaseOccurrences');
+  if (typeof value == 'number' && value !== 0) {
+    result = value;
+  } else {
+    result = defaultValues.uppercaseOccurrences;
+  }
+
+  if ($$debugging)
+    console.log('§> getUpperCasesOccurrences', { value, result });
+
+  return result;
+};
+
+/**
  * Gets the list of lowercase letters from the configuration file
  * or from the default values.
  *
@@ -69,6 +113,28 @@ const getLowerCases = (): string[] => {
   }
 
   if ($$debugging) console.log('§> getLowerCases', { values, result });
+
+  return result;
+};
+
+/**
+ * Gets the amount of lowercase letters occurrences from the configuration
+ * file or from the default values.
+ *
+ * @returns {number}
+ */
+const getLowerCasesOccurrences = (): number => {
+  let result = 0;
+
+  let value = configuration.get('lowercaseOccurrences');
+  if (typeof value == 'number' && value !== 0) {
+    result = value;
+  } else {
+    result = defaultValues.lowercaseOccurrences;
+  }
+
+  if ($$debugging)
+    console.log('§> getLowerCasesOccurrences', { value, result });
 
   return result;
 };
@@ -95,6 +161,27 @@ const getNumbers = (): string[] => {
 };
 
 /**
+ * Gets the amount of digit occurrences from the configuration
+ * file or from the default values.
+ *
+ * @returns {number}
+ */
+const getNumberOccurrences = (): number => {
+  let result = 0;
+
+  let value = configuration.get('numberOccurrences');
+  if (typeof value == 'number' && value !== 0) {
+    result = value;
+  } else {
+    result = defaultValues.numberOccurrences;
+  }
+
+  if ($$debugging) console.log('§> getNumberOccurrences', { value, result });
+
+  return result;
+};
+
+/**
  * Gets the list of symbols from the configuration file
  * or from the default values.
  *
@@ -111,6 +198,27 @@ const getSymbols = (): string[] => {
   }
 
   if ($$debugging) console.log('§> getSymbols', { values, result });
+
+  return result;
+};
+
+/**
+ * Gets the amount of symbols occurrences from the configuration
+ * file or from the default values.
+ *
+ * @returns {number}
+ */
+const getSymbolOccurrences = (): number => {
+  let result = 0;
+
+  let value = configuration.get('symbolOccurrences');
+  if (typeof value == 'number' && value !== 0) {
+    result = value;
+  } else {
+    result = defaultValues.symbolOccurrences;
+  }
+
+  if ($$debugging) console.log('§> getSymbolOccurrences', { value, result });
 
   return result;
 };
@@ -188,10 +296,12 @@ const checkPassword = (
 const isValidPassword = (str: string): boolean => {
   let result = true;
 
-  if (!checkPassword(str, 1, getUpperCases())) result = false;
-  if (!checkPassword(str, 1, getLowerCases())) result = false;
-  if (!checkPassword(str, 1, getNumbers())) result = false;
-  if (!checkPassword(str, 1, getSymbols())) result = false;
+  if (!checkPassword(str, getUpperCasesOccurrences(), getUpperCases()))
+    result = false;
+  if (!checkPassword(str, getLowerCasesOccurrences(), getLowerCases()))
+    result = false;
+  if (!checkPassword(str, getNumberOccurrences(), getNumbers())) result = false;
+  if (!checkPassword(str, getSymbolOccurrences(), getSymbols())) result = false;
 
   if ($$debugging) console.log('§> isValidPassword', { str, result });
 

@@ -65,25 +65,75 @@
       {
         "title": "Sam's Password Generator",
         "properties": {
+          "sampwdgenerator.passwords": {
+            "type": "number",
+            "default": 8,
+            "order": 0,
+            "markdownDescription": "Amount of password produced each time the command is called."
+          },
           "sampwdgenerator.uppercases": {
             "type": "string",
             "default": "BCDEFGHIJKLMNOPQRSTUVWXYZ",
+            "order": 1,
             "markdownDescription": "A string containing the uppercase characters used to construct passwords."
+          },
+          "sampwdgenerator.uppercaseOccurrences": {
+            "type": "number",
+            "default": 2,
+            "enum": [
+              1,
+              2
+            ],
+            "order": 1,
+            "markdownDescription": "Minimum amount of uppercase characters contained in each password"
           },
           "sampwdgenerator.lowercases": {
             "type": "string",
             "default": "abcdefghijklmnopqrstuvwxyz",
+            "order": 2,
             "markdownDescription": "A string containing the lowercase characters used to construct passwords."
+          },
+          "sampwdgenerator.lowercaseOccurrences": {
+            "type": "number",
+            "default": 1,
+            "enum": [
+              1,
+              2
+            ],
+            "order": 2,
+            "markdownDescription": "Minimum amount of lowercase characters contained in each password"
           },
           "sampwdgenerator.numbers": {
             "type": "string",
             "default": "0123456789",
+            "order": 3,
             "markdownDescription": "A string containing the numbers used to construct passwords."
+          },
+          "sampwdgenerator.numberOccurrences": {
+            "type": "number",
+            "default": 2,
+            "enum": [
+              1,
+              2
+            ],
+            "order": 3,
+            "markdownDescription": "Minimum amount of digits contained in each password"
           },
           "sampwdgenerator.symbols": {
             "type": "string",
             "default": "£$%&*§#@",
+            "order": 4,
             "markdownDescription": "A string containing the symbols used to construct passwords."
+          },
+          "sampwdgenerator.symbolOccurrences": {
+            "type": "number",
+            "default": 2,
+            "enum": [
+              1,
+              2
+            ],
+            "order": 4,
+            "markdownDescription": "Minimum amount of special characters contained in each password"
           }
         }
       }
