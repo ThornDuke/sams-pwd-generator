@@ -47,9 +47,9 @@ Alternatively, you can change the values ​​directly in the configuration fil
    `Shift+Command+P`)
 2. Type `open settings`
 3. You are presented with a few options, choose `Open User Settings (JSON)`
+4. Add or modify the following lines.
 
 ```json
-{
   "sampwdgenerator.uppercases": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
   "sampwdgenerator.uppercaseOccurrences": 1,
   "sampwdgenerator.lowercases": "abcdefghijklmnopqrstuvwxyz",
@@ -58,8 +58,15 @@ Alternatively, you can change the values ​​directly in the configuration fil
   "sampwdgenerator.numberOccurrences": 1,
   "sampwdgenerator.symbols": "£$%&*§#@",
   "sampwdgenerator.symbolOccurrences": 1
-}
 ```
+
+Whether you changed the parameters manually in `settings.json` or in the
+plugin's `Settings` page, **you must restart VSCode or reload the window** for
+the changes to take effect:
+
+1. `F1` or `Ctrl+Shift+P` or `Shift+Command+P`;
+2. type `reload window`;
+3. choose `Developer: Reload Window`;
 
 ## Acknowledgements
 
