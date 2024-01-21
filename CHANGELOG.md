@@ -1,8 +1,9 @@
 # Change Log
 
 <!--
+--- EXAMPLE:
+
 ## [major.minor.patch] - yyyy-mm-dd
-(When publish put this number into <package.json>.version)
 
 ### Added
 
@@ -12,10 +13,26 @@
 ### Changed
 ### Removed
 
+---
+
 ## [TODO]
 
+- Before releasing
+  1. Check for the `<globals.ts>.$$debugging` value. It must be `false`.
+  2. Update the version number into <package.json>.version
+
+---
+
 ## [Unreleased]
+
 -->
+
+## [1.0.1] - 2023-01-21
+
+### Fixed
+
+- The `sampwdgenerator.passwords` configuration parameter was not being read or
+  used.
 
 ## [1.0.0] - 2024-01-20
 

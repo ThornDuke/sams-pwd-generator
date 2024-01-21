@@ -10,7 +10,7 @@ if ($$debugging) console.log('§> ROOT', { configuration });
  * the configuration file but, failing that, the default values ​​are used.
  */
 const defaultValues = {
-  passwords: 8,
+  passwords: 10,
   uppercases: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
   uppercaseOccurrences: 1,
   lowercases: 'abcdefghijklmnopqrstuvwxyz',
@@ -33,6 +33,26 @@ const randomInt = (min: number, max: number): number => {
   const result = crypto.randomInt(min, max + 1);
 
   if ($$debugging) console.log('§> randomInt', { result });
+
+  return result;
+};
+
+/**
+ * Gets the amount of password produced each time the command is called.
+ *
+ * @returns {number} A list of upeercase chars
+ */
+const getPwdListLength = (): number => {
+  let result = 0;
+
+  let value = configuration.get('passwords');
+  if (typeof value == 'number' && value !== 0) {
+    result = value;
+  } else {
+    result = defaultValues.passwords;
+  }
+
+  if ($$debugging) console.log('§> getPwdListLength', { value, result });
 
   return result;
 };
@@ -340,20 +360,23 @@ const getPwd = (length: number): string => {
 };
 
 /**
- * Produces an array containing 10 passwords of length equal
- * to _length_ characters. It is the method called by the
- * extension to produce and print password lists.
+ * Produces an array containing passwords of length equal
+ * to _length_ characters. the array has `getPwdListLength`
+ * elements. It is the method called by the extension
+ * to produce and print password lists.
  *
  * @param length Length of the passwords
  * @returns {string[]} An array of strings
  */
 export const getPwdList = (length: number): string[] => {
   let result = [];
-  for (let i = 1; i <= 10; i++) {
+  const spins = getPwdListLength();
+
+  for (let i = 1; i <= spins; i++) {
     result.push(getPwd(length));
   }
 
-  if ($$debugging) console.log('§> getPwdList', { length, result });
+  if ($$debugging) console.log('§> getPwdList', { length, spins, result });
 
   return result;
 };
