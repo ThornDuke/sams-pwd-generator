@@ -36,7 +36,7 @@ When you choose one of these commands the `Output` tab in VSCode opens showing a
 list of ten passwords with the chosen length. Choose one, copy and paste it into
 the editor where you need it.
 
-## Recommended Settings
+## Managing settings
 
 Click on `Manage / Extension settings` and change the values ​​according to your
 preferences.
