@@ -73,7 +73,7 @@
           },
           "sampwdgenerator.uppercases": {
             "type": "string",
-            "default": "BCDEFGHIJKLMNOPQRSTUVWXYZ",
+            "default": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
             "order": 1,
             "markdownDescription": "A string containing the uppercase characters used to construct passwords."
           },
