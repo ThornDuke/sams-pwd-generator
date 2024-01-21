@@ -18,8 +18,8 @@
 ## [TODO]
 
 - Before releasing
-  1. Check for the `<globals.ts>.$$debugging` value. It must be `false`.
-  2. Update the version number into <package.json>.version
+  1. [ ] Check for the `<globals.ts>.$$debugging` value. It must be `false`.
+  2. [ ] Update the version number into <package.json>.version
 
 ---
 
@@ -33,6 +33,7 @@
 
 - The `sampwdgenerator.passwords` configuration parameter was not being read or
   used.
+- A lot of bugfixing.
 
 ## [1.0.0] - 2024-01-20
 

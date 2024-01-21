@@ -1,7 +1,7 @@
 /**
  * if true many logs are generated and sent to the console
  */
-export const $$debugging = true;
+export const $$debugging = false;
 
 /**
  * Name of the key within the configuration file to look

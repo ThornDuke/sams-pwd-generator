@@ -44,7 +44,7 @@ const createAndShowPwds = (length: number) => {
   let lines = getPwdList(length).map((line, index, currArray) =>
     formatLine(index + 1, currArray.length, line)
   );
-  pwdChannel.append(`${lines.join('\n')}\n\n`);
+  pwdChannel.append(`${lines.join('\n')}\n\n=== Processing finished ===\n`);
   pwdChannel.show();
 };
 
