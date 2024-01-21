@@ -2,9 +2,6 @@ import * as vscode from 'vscode';
 import crypto from 'node:crypto';
 import { $$debugging, configKey } from './globals';
 
-const configuration = vscode.workspace.getConfiguration(configKey);
-if ($$debugging) console.log('§> ROOT', { configuration });
-
 /**
  * Default values ​​to use to construct passwords. The values ​​are taken from
  * the configuration file but, failing that, the default values ​​are used.
@@ -44,6 +41,7 @@ const randomInt = (min: number, max: number): number => {
  */
 const getPwdListLength = (): number => {
   let result = 0;
+  const configuration = vscode.workspace.getConfiguration(configKey);
 
   let value = configuration.get('passwords');
   if (typeof value == 'number' && value !== 0) {
@@ -52,7 +50,8 @@ const getPwdListLength = (): number => {
     result = defaultValues.passwords;
   }
 
-  if ($$debugging) console.log('§> getPwdListLength', { value, result });
+  if ($$debugging)
+    console.log('§> getPwdListLength', { configuration, value, result });
 
   return result;
 };
@@ -65,6 +64,7 @@ const getPwdListLength = (): number => {
  */
 const getUpperCases = (): string[] => {
   let result = [];
+  const configuration = vscode.workspace.getConfiguration(configKey);
 
   let values = configuration.get('uppercases');
   if (typeof values == 'string' && values.length !== 0) {
@@ -73,7 +73,8 @@ const getUpperCases = (): string[] => {
     result = defaultValues.uppercases.split('');
   }
 
-  if ($$debugging) console.log('§> getUpperCases', { values, result });
+  if ($$debugging)
+    console.log('§> getUpperCases', { configuration, values, result });
 
   return result;
 };
@@ -86,6 +87,7 @@ const getUpperCases = (): string[] => {
  */
 const getUpperCasesOccurrences = (): number => {
   let result = 0;
+  const configuration = vscode.workspace.getConfiguration(configKey);
 
   let value = configuration.get('uppercaseOccurrences');
   if (typeof value == 'number' && value !== 0) {
@@ -95,7 +97,11 @@ const getUpperCasesOccurrences = (): number => {
   }
 
   if ($$debugging)
-    console.log('§> getUpperCasesOccurrences', { value, result });
+    console.log('§> getUpperCasesOccurrences', {
+      configuration,
+      value,
+      result,
+    });
 
   return result;
 };
@@ -108,6 +114,7 @@ const getUpperCasesOccurrences = (): number => {
  */
 const getLowerCases = (): string[] => {
   let result = [];
+  const configuration = vscode.workspace.getConfiguration(configKey);
 
   let values = configuration.get('lowercases');
   if (typeof values == 'string' && values.length !== 0) {
@@ -116,7 +123,8 @@ const getLowerCases = (): string[] => {
     result = defaultValues.lowercases.split('');
   }
 
-  if ($$debugging) console.log('§> getLowerCases', { values, result });
+  if ($$debugging)
+    console.log('§> getLowerCases', { configuration, values, result });
 
   return result;
 };
@@ -129,6 +137,7 @@ const getLowerCases = (): string[] => {
  */
 const getLowerCasesOccurrences = (): number => {
   let result = 0;
+  const configuration = vscode.workspace.getConfiguration(configKey);
 
   let value = configuration.get('lowercaseOccurrences');
   if (typeof value == 'number' && value !== 0) {
@@ -138,7 +147,11 @@ const getLowerCasesOccurrences = (): number => {
   }
 
   if ($$debugging)
-    console.log('§> getLowerCasesOccurrences', { value, result });
+    console.log('§> getLowerCasesOccurrences', {
+      configuration,
+      value,
+      result,
+    });
 
   return result;
 };
@@ -151,6 +164,7 @@ const getLowerCasesOccurrences = (): number => {
  */
 const getNumbers = (): string[] => {
   let result = [];
+  const configuration = vscode.workspace.getConfiguration(configKey);
 
   let values = configuration.get('numbers');
   if (typeof values == 'string' && values.length !== 0) {
@@ -159,7 +173,8 @@ const getNumbers = (): string[] => {
     result = defaultValues.numbers.split('');
   }
 
-  if ($$debugging) console.log('§> getNumbers', { values, result });
+  if ($$debugging)
+    console.log('§> getNumbers', { configuration, values, result });
 
   return result;
 };
@@ -172,6 +187,7 @@ const getNumbers = (): string[] => {
  */
 const getNumberOccurrences = (): number => {
   let result = 0;
+  const configuration = vscode.workspace.getConfiguration(configKey);
 
   let value = configuration.get('numberOccurrences');
   if (typeof value == 'number' && value !== 0) {
@@ -180,7 +196,8 @@ const getNumberOccurrences = (): number => {
     result = defaultValues.numberOccurrences;
   }
 
-  if ($$debugging) console.log('§> getNumberOccurrences', { value, result });
+  if ($$debugging)
+    console.log('§> getNumberOccurrences', { configuration, value, result });
 
   return result;
 };
@@ -193,6 +210,7 @@ const getNumberOccurrences = (): number => {
  */
 const getSymbols = (): string[] => {
   let result = [];
+  const configuration = vscode.workspace.getConfiguration(configKey);
 
   let values = configuration.get('symbols');
   if (typeof values == 'string' && values.length !== 0) {
@@ -201,7 +219,8 @@ const getSymbols = (): string[] => {
     result = defaultValues.symbols.split('');
   }
 
-  if ($$debugging) console.log('§> getSymbols', { values, result });
+  if ($$debugging)
+    console.log('§> getSymbols', { configuration, values, result });
 
   return result;
 };
@@ -214,6 +233,7 @@ const getSymbols = (): string[] => {
  */
 const getSymbolOccurrences = (): number => {
   let result = 0;
+  const configuration = vscode.workspace.getConfiguration(configKey);
 
   let value = configuration.get('symbolOccurrences');
   if (typeof value == 'number' && value !== 0) {
@@ -222,7 +242,8 @@ const getSymbolOccurrences = (): number => {
     result = defaultValues.symbolOccurrences;
   }
 
-  if ($$debugging) console.log('§> getSymbolOccurrences', { value, result });
+  if ($$debugging)
+    console.log('§> getSymbolOccurrences', { configuration, value, result });
 
   return result;
 };
