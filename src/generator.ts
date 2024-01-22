@@ -37,7 +37,7 @@ const randomInt = (min: number, max: number): number => {
 /**
  * Gets the amount of password produced each time the command is called.
  *
- * @returns {number} A list of upeercase chars
+ * @returns {number} A list of uppercase chars
  */
 const getPwdListLength = (): number => {
   let result = 0;
