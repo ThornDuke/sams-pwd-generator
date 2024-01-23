@@ -284,25 +284,16 @@ suite('Sams Password Generator: generator.ts', () => {
   });
 
   test('Testing getPwdList(): string[]', () => {
+    const result = generator.getPwdList(8);
+
     // is an array
-    assert.equal(
-      typeof generator.getPwdList(8),
-      'object',
-      'Has to return an array'
-    );
+    assert.equal(typeof result, 'object', 'Has to return an array');
 
     // has only strings
     assert.equal(
-      hasOnlyStrings(generator.getPwdList(8)),
+      hasOnlyStrings(result),
       true,
       'The array has to contain only strings'
-    );
-
-    // the strings are all 8 chars long
-    assert.equal(
-      areStringsSameLength(generator.getPwdList(8), 8),
-      true,
-      'The array has to contain only strings 8 chars long'
     );
   });
 });

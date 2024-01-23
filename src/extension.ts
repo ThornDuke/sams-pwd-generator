@@ -27,7 +27,11 @@ const pwdChannel = vscode.window.createOutputChannel('PwdGenerator');
  * @param {string} str
  * @returns {string}
  */
-const formatLine = (num: number, maxNum: number, str: string): string => {
+export const formatLine = (
+  num: number,
+  maxNum: number,
+  str: string
+): string => {
   const padding = String(maxNum).length + 2;
   let start: string = String(num) + '.';
   start = start.padEnd(padding, ' ');
