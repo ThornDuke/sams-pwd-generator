@@ -26,7 +26,7 @@ const defaultValues = {
  * @param {number} max The upper limit
  * @returns {number} a random integer number
  */
-const randomInt = (min: number, max: number): number => {
+export const randomInt = (min: number, max: number): number => {
   const result = crypto.randomInt(min, max + 1);
 
   if ($$debugging) console.log('§> randomInt', { result });
