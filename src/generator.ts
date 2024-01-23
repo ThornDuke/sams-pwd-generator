@@ -37,9 +37,9 @@ export const randomInt = (min: number, max: number): number => {
 /**
  * Gets the amount of password produced each time the command is called.
  *
- * @returns {number} A list of uppercase chars
+ * @returns {number} A number greater than zero
  */
-const getPwdListLength = (): number => {
+export const getPwdListLength = (): number => {
   let result = 0;
   const value = vscode.workspace.getConfiguration(configKey).get('passwords');
 
@@ -47,6 +47,10 @@ const getPwdListLength = (): number => {
     result = value;
   } else {
     result = defaultValues.passwords;
+  }
+
+  if (result === 0) {
+    result = 1;
   }
 
   if ($$debugging) console.log('§> getPwdListLength', { value, result });
@@ -58,9 +62,9 @@ const getPwdListLength = (): number => {
  * Gets the list of uppercase letters from the configuration
  * file or from the default values.
  *
- * @returns {string[]} A list of upeercase chars
+ * @returns {string[]} A list of uppercase chars
  */
-const getUpperCases = (): string[] => {
+export const getUpperCases = (): string[] => {
   let result = [];
   const values = vscode.workspace.getConfiguration(configKey).get('uppercases');
 
@@ -81,7 +85,7 @@ const getUpperCases = (): string[] => {
  *
  * @returns {number}
  */
-const getUpperCasesOccurrences = (): number => {
+export const getUpperCasesOccurrences = (): number => {
   let result = 0;
   const value = vscode.workspace
     .getConfiguration(configKey)
@@ -111,7 +115,7 @@ const getUpperCasesOccurrences = (): number => {
  *
  * @returns {string[]} A list of lowercase chars
  */
-const getLowerCases = (): string[] => {
+export const getLowerCases = (): string[] => {
   let result = [];
   const values = vscode.workspace.getConfiguration(configKey).get('lowercases');
 
@@ -132,7 +136,7 @@ const getLowerCases = (): string[] => {
  *
  * @returns {number}
  */
-const getLowerCasesOccurrences = (): number => {
+export const getLowerCasesOccurrences = (): number => {
   let result = 0;
   const value = vscode.workspace
     .getConfiguration(configKey)
@@ -162,7 +166,7 @@ const getLowerCasesOccurrences = (): number => {
  *
  * @returns {string[]} A list of numbers
  */
-const getNumbers = (): string[] => {
+export const getNumbers = (): string[] => {
   let result = [];
   const values = vscode.workspace.getConfiguration(configKey).get('numbers');
 
@@ -183,7 +187,7 @@ const getNumbers = (): string[] => {
  *
  * @returns {number}
  */
-const getNumberOccurrences = (): number => {
+export const getNumberOccurrences = (): number => {
   let result = 0;
   const value = vscode.workspace
     .getConfiguration(configKey)
@@ -212,7 +216,7 @@ const getNumberOccurrences = (): number => {
  *
  * @returns {string[]} A list of special chars
  */
-const getSymbols = (): string[] => {
+export const getSymbols = (): string[] => {
   let result = [];
   const values = vscode.workspace.getConfiguration(configKey).get('symbols');
 
@@ -233,7 +237,7 @@ const getSymbols = (): string[] => {
  *
  * @returns {number}
  */
-const getSymbolOccurrences = (): number => {
+export const getSymbolOccurrences = (): number => {
   let result = 0;
   const value = vscode.workspace
     .getConfiguration(configKey)
@@ -265,7 +269,7 @@ const getSymbolOccurrences = (): number => {
  * @param {string[]} ar An array of strings
  * @returns {string[]} A shuffled array of string
  */
-const shuffleArray = (ar: string[]): string[] => {
+export const shuffleArray = (ar: string[]): string[] => {
   let result = [...ar];
   for (let k = 1; k <= 3; k++) {
     for (let i = result.length - 1; i > 0; i--) {
@@ -289,7 +293,7 @@ const shuffleArray = (ar: string[]): string[] => {
  * @param {string[]} strArr the array used to check the password
  * @returns {boolean}
  */
-const checkPassword = (
+export const checkPassword = (
   str: string,
   occurrences: number,
   strArr: string[]
@@ -319,24 +323,33 @@ const checkPassword = (
 };
 
 /**
- * Takes a password (a string) and checks that it contains at least
- * one uppercase character, one lowercase character, one number and
- * one special character.
+ * Takes a password (a string) and checks that it contains
+ * at least `occurrences` uppercase character, `occurrences`
+ * lowercase character, `occurrences` number and
+ * `occurrences` special character.
  *
  * @param {string} str the password to check
  * @returns {boolean} true if the password is valid, false otherwise.
  */
-const isValidPassword = (str: string): boolean => {
+export const isValidPassword = (str: string): boolean => {
   let result = true;
 
-  if (!checkPassword(str, getUpperCasesOccurrences(), getUpperCases()))
+  if (!checkPassword(str, getUpperCasesOccurrences(), getUpperCases())) {
     result = false;
-  if (!checkPassword(str, getLowerCasesOccurrences(), getLowerCases()))
+  }
+  if (!checkPassword(str, getLowerCasesOccurrences(), getLowerCases())) {
     result = false;
-  if (!checkPassword(str, getNumberOccurrences(), getNumbers())) result = false;
-  if (!checkPassword(str, getSymbolOccurrences(), getSymbols())) result = false;
+  }
+  if (!checkPassword(str, getNumberOccurrences(), getNumbers())) {
+    result = false;
+  }
+  if (!checkPassword(str, getSymbolOccurrences(), getSymbols())) {
+    result = false;
+  }
 
-  if ($$debugging) console.log('§> isValidPassword', { str, result });
+  if ($$debugging) {
+    console.log('§> isValidPassword', { str, result });
+  }
 
   return result;
 };
@@ -357,8 +370,9 @@ const getPool = (): string[] => {
   let result: string[] = [];
   result = shuffleArray(result.concat(uCases, lCases, numbers, symbols));
 
-  if ($$debugging)
+  if ($$debugging) {
     console.log('§> getPool', { uCases, lCases, numbers, symbols, result });
+  }
 
   return result;
 };
@@ -383,7 +397,9 @@ const getPwd = (length: number): string => {
 
   result = shuffleArray(result.split('')).join('');
 
-  if ($$debugging) console.log('§> getPwd', { length, pool, result });
+  if ($$debugging) {
+    console.log('§> getPwd', { length, pool, result });
+  }
 
   return result;
 };
@@ -405,7 +421,9 @@ export const getPwdList = (length: number): string[] => {
     result.push(getPwd(length));
   }
 
-  if ($$debugging) console.log('§> getPwdList', { length, spins, result });
+  if ($$debugging) {
+    console.log('§> getPwdList', { length, spins, result });
+  }
 
   return result;
 };
