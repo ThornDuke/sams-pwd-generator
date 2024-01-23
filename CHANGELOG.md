@@ -29,6 +29,10 @@
 
 - A suit of mocha tests.
 
+### Fixed
+
+- Responds immediately to configuration changes
+
 -->
 
 ## [1.0.1] - 2023-01-21

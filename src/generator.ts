@@ -428,6 +428,4 @@ export const getPwdList = (length: number): string[] => {
   return result;
 };
 
-console.log('§§>', getPwdList(8));
-
 // End of file generator.ts
