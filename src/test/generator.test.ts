@@ -33,6 +33,17 @@ const isDifferentOrder = (arrA: string[], arrB: string[]): boolean => {
   return result;
 };
 
+const areStringsSameLength = (arr: string[], length: number): boolean => {
+  let result = true;
+  for (let item in arr) {
+    if (item.length !== length) {
+      result = false;
+      break;
+    }
+  }
+  return result;
+};
+
 suite('Sams Password Generator: generator.ts', () => {
   test('Testing randomInt(): type number', () => {
     assert.equal(
@@ -241,6 +252,57 @@ suite('Sams Password Generator: generator.ts', () => {
       typeof generator.isValidPassword(testPwd),
       'boolean',
       'Has to return a boolean value'
+    );
+  });
+
+  test('Testing getPool(): string[]', () => {
+    assert.equal(
+      typeof generator.getPool(),
+      'object',
+      'Has to return an array'
+    );
+
+    assert.equal(
+      hasOnlyStrings(generator.getPool()),
+      true,
+      'The array has to contain only strings'
+    );
+  });
+
+  test('Testing getPwd(): string', () => {
+    assert.equal(
+      typeof generator.getPwd(8),
+      'string',
+      'Has to return a string'
+    );
+
+    assert.equal(
+      generator.getPwd(8).length,
+      8,
+      'Has to return a string 8 chars long'
+    );
+  });
+
+  test('Testing getPwdList(): string[]', () => {
+    // is an array
+    assert.equal(
+      typeof generator.getPwdList(8),
+      'object',
+      'Has to return an array'
+    );
+
+    // has only strings
+    assert.equal(
+      hasOnlyStrings(generator.getPwdList(8)),
+      true,
+      'The array has to contain only strings'
+    );
+
+    // the strings are all 8 chars long
+    assert.equal(
+      areStringsSameLength(generator.getPwdList(8), 8),
+      true,
+      'The array has to contain only strings 8 chars long'
     );
   });
 });

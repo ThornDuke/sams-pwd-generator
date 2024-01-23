@@ -25,6 +25,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- A suit of mocha tests.
+
 -->
 
 ## [1.0.1] - 2023-01-21

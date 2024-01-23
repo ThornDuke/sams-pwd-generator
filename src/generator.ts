@@ -361,7 +361,7 @@ export const isValidPassword = (str: string): boolean => {
  *
  * @returns {string[]}
  */
-const getPool = (): string[] => {
+export const getPool = (): string[] => {
   const uCases: string[] = shuffleArray(getUpperCases());
   const lCases: string[] = shuffleArray(getLowerCases());
   const numbers: string[] = shuffleArray(getNumbers());
@@ -383,7 +383,7 @@ const getPool = (): string[] => {
  * @param length Length of the password
  * @returns {string} the password
  */
-const getPwd = (length: number): string => {
+export const getPwd = (length: number): string => {
   let result = '';
   const pool = getPool();
 
