@@ -26,6 +26,12 @@
 
 ## [Unreleased]
 
+-->
+
+## [1.1.0] - 2024-01-24
+
+- Ready for publication.
+
 ### Added
 
 - A suit of mocha tests.
@@ -33,8 +39,6 @@
 ### Changed
 
 - Responds immediately to configuration changes
-
--->
 
 ## [1.0.1] - 2023-01-21
 
