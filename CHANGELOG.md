@@ -14,19 +14,23 @@
 
 ## [TODO]
 
-- Before releasing
-  1. [ ] Check for the `<globals.ts>.$$debugging` value. It must be `false`.
-  2. [ ] Update the version number into <package.json>.version
-- release
-  - Use this code
-  ```sh
-  vsce publish
-  ```
-- Add some 'strong' in the <README.md>
-- Change the phrase `showing a list of ten passwords with` in <README.md>
-- Some shield.io into <README.md>
-- Add the tag `security`
-- Change <README.md>: 'The randomization engine is based on the crypto library...'
+- Fixed
+  - Before releasing
+    1. [ ] Check for the `<globals.ts>.$$debugging` value. It must be `false`.
+    2. [ ] Update the version number into <package.json>.version
+  - Releasing
+    - Use this code
+    ```sh
+    vsce publish
+    ```
+  - After releasing
+- Common
+  - [ ] Add some 'strong' in the <README.md>
+  - [ ] Change the phrase `showing a list of ten passwords with` in <README.md>
+  - [ ] Some shield.io into <README.md>
+  - [ ] Add the tag `security`
+  - [ ] Change <README.md>: 'The randomization engine is based on the crypto library...'
+  - [ ] Add a video in <README.md>
 
 --- UNRELEASED
 
