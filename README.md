@@ -4,6 +4,8 @@ This extension allows you to easily create passwords of different lengths, from
 8 to 16 characters. Passwords all have at least one uppercase character, one
 lowercase character, one number, and one special character.
 
+<img src="video04.gif" alt="example video" width="700"/>
+
 You can configure the character set that will be used to create passwords, the
 number of passwords produced with every 'spin', and the minimum number of
 uppercase characters, lowercase characters, numbers or symbols that must be

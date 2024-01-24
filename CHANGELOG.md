@@ -22,6 +22,12 @@
   ```sh
   vsce publish
   ```
+- Add some 'strong' in the <README.md>
+- Change the phrase `showing a list of ten passwords with` in <README.md>
+- Some shield.io into <README.md>
+- Add the tag `security`
+- Change <README.md>: 'The randomization engine is based on the crypto library...'
+
 --- UNRELEASED
 
 ## [Unreleased]
