@@ -328,7 +328,9 @@ export const checkPassword = (
     }
   }
 
-  if (stack.length >= occurrences) result = true;
+  if (stack.length >= occurrences) {
+    result = true;
+  }
 
   if ($$debugging) {
     console.log('§> checkPassword', {
