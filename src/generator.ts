@@ -29,7 +29,9 @@ const defaultValues = {
 export const randomInt = (min: number, max: number): number => {
   const result = crypto.randomInt(min, max + 1);
 
-  if ($$debugging) console.log('§> randomInt', { result });
+  if ($$debugging) {
+    console.log('§> randomInt', { result });
+  }
 
   return result;
 };
@@ -53,7 +55,9 @@ export const getPwdListLength = (): number => {
     result = 1;
   }
 
-  if ($$debugging) console.log('§> getPwdListLength', { value, result });
+  if ($$debugging) {
+    console.log('§> getPwdListLength', { value, result });
+  }
 
   return result;
 };
@@ -74,7 +78,9 @@ export const getUpperCases = (): string[] => {
     result = defaultValues.uppercases.split('');
   }
 
-  if ($$debugging) console.log('§> getUpperCases', { values, result });
+  if ($$debugging) {
+    console.log('§> getUpperCases', { values, result });
+  }
 
   return result;
 };
@@ -103,8 +109,9 @@ export const getUpperCasesOccurrences = (): number => {
     result = 1;
   }
 
-  if ($$debugging)
+  if ($$debugging) {
     console.log('§> getUpperCasesOccurrences', { value, result });
+  }
 
   return result;
 };
@@ -125,7 +132,9 @@ export const getLowerCases = (): string[] => {
     result = defaultValues.lowercases.split('');
   }
 
-  if ($$debugging) console.log('§> getLowerCases', { values, result });
+  if ($$debugging) {
+    console.log('§> getLowerCases', { values, result });
+  }
 
   return result;
 };
@@ -154,8 +163,9 @@ export const getLowerCasesOccurrences = (): number => {
     result = 1;
   }
 
-  if ($$debugging)
+  if ($$debugging) {
     console.log('§> getLowerCasesOccurrences', { value, result });
+  }
 
   return result;
 };
@@ -176,7 +186,9 @@ export const getNumbers = (): string[] => {
     result = defaultValues.numbers.split('');
   }
 
-  if ($$debugging) console.log('§> getNumbers', { values, result });
+  if ($$debugging) {
+    console.log('§> getNumbers', { values, result });
+  }
 
   return result;
 };
@@ -205,7 +217,9 @@ export const getNumberOccurrences = (): number => {
     result = 1;
   }
 
-  if ($$debugging) console.log('§> getNumberOccurrences', { value, result });
+  if ($$debugging) {
+    console.log('§> getNumberOccurrences', { value, result });
+  }
 
   return result;
 };
@@ -226,7 +240,9 @@ export const getSymbols = (): string[] => {
     result = defaultValues.symbols.split('');
   }
 
-  if ($$debugging) console.log('§> getSymbols', { values, result });
+  if ($$debugging) {
+    console.log('§> getSymbols', { values, result });
+  }
 
   return result;
 };
@@ -255,7 +271,9 @@ export const getSymbolOccurrences = (): number => {
     result = 1;
   }
 
-  if ($$debugging) console.log('§> getSymbolOccurrences', { value, result });
+  if ($$debugging) {
+    console.log('§> getSymbolOccurrences', { value, result });
+  }
 
   return result;
 };
@@ -278,7 +296,9 @@ export const shuffleArray = (ar: string[]): string[] => {
     }
   }
 
-  if ($$debugging) console.log('§> shuffleArray', { ar, result });
+  if ($$debugging) {
+    console.log('§> shuffleArray', { ar, result });
+  }
 
   return result;
 };
@@ -310,7 +330,7 @@ export const checkPassword = (
 
   if (stack.length >= occurrences) result = true;
 
-  if ($$debugging)
+  if ($$debugging) {
     console.log('§> checkPassword', {
       str,
       occurrences,
@@ -318,6 +338,7 @@ export const checkPassword = (
       stack,
       result,
     });
+  }
 
   return result;
 };
