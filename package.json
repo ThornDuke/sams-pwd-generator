@@ -18,7 +18,8 @@
     "Other"
   ],
   "keywords": [
-    "passwords"
+    "passwords",
+    "security"
   ],
   "activationEvents": [
     "onStartupFinished"

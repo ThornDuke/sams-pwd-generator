@@ -1,5 +1,15 @@
 # <img src="icon.png" alt="package icon" width="50px"/> Sam's Passwords Generator
 
+![GitHub License](https://img.shields.io/github/license/ThornDuke/sams-pwd-generator?style=plastic&logo=gnu)
+![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/thornduke.sams-pw-gen.svg?style=plastic)
+
+<!--
+![Visual Studio Marketplace Rating Stars](https://img.shields.io/visual-studio-marketplace/stars/thornduke.sams-pw-gen.svg?style=plastic)
+![Visual Studio Marketplace Rating](https://img.shields.io/visual-studio-marketplace/r/thornduke.sams-pw-gen.svg?style=plastic)
+![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/thornduke.sams-pw-gen.svg?style=plastic)
+![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/thornduke.sams-pw-gen.svg?style=plastic)
+-->
+
 This extension allows you to easily create passwords of different lengths, from
 8 to 16 characters. Passwords all have at least one uppercase character, one
 lowercase character, one number, and one special character.
@@ -11,9 +21,8 @@ number of passwords produced with every 'spin', and the minimum number of
 uppercase characters, lowercase characters, numbers or symbols that must be
 contained in each password.
 
-The `crypto` library, which is considered cryptographically secure
-([unlike the `Math` library](<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random#:~:text=Note%3A%20Math.random()%20does%20not%20provide%20cryptographically%20secure%20random%20numbers.>)),
-is used as the randomization engine.
+The randomization engine is based on the `crypto` library, which is
+[considered cryptographically secure](https://nodejs.org/api/crypto.html#crypto:~:text=js%20crypto%20constants-,Crypto,-%23).
 
 ## Installation
 
