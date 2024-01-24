@@ -9,6 +9,10 @@ number of passwords produced with every 'spin', and the minimum number of
 uppercase characters, lowercase characters, numbers or symbols that must be
 contained in each password.
 
+The `crypto` library, which is considered cryptographically secure
+([unlike the `Math` library](<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random#:~:text=Note%3A%20Math.random()%20does%20not%20provide%20cryptographically%20secure%20random%20numbers.>)),
+is used as the randomization engine.
+
 ## Installation
 
 1. Open **Extensions** sidebar panel in VS Code. `View → Extensions`

@@ -6,22 +6,23 @@
 ## [major.minor.patch] - yyyy-mm-dd
 
 ### Added
-
-- An add
-
 ### Fixed
 ### Changed
 ### Removed
 
----
+--- TODO
 
 ## [TODO]
 
 - Before releasing
   1. [ ] Check for the `<globals.ts>.$$debugging` value. It must be `false`.
   2. [ ] Update the version number into <package.json>.version
-
----
+- release
+  - Use this code
+  ```sh
+  vsce publish
+  ```
+--- UNRELEASED
 
 ## [Unreleased]
 
@@ -29,7 +30,7 @@
 
 - A suit of mocha tests.
 
-### Fixed
+### Changed
 
 - Responds immediately to configuration changes
 
@@ -62,7 +63,7 @@
   call.
 - A configuration parameter to change the minimum number of uppercase,
   lowercase, number, and symbol characters that must be present in each password
-  (1 or 2, not more).
+  (1 or 2, not more, not less).
 
 ### Fixed
 

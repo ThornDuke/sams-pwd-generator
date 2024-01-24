@@ -9,6 +9,7 @@ import * as vscode from 'vscode';
  * The engine of the extension
  */
 import { getPwdList } from './generator';
+import extConfig from '../package.json';
 
 /**
  * The vscode panel `output` channel where passwords will be displayed
@@ -45,10 +46,17 @@ export const formatLine = (
  * @param length The length of the passwords
  */
 const createAndShowPwds = (length: number) => {
-  let lines = getPwdList(length).map((line, index, currArray) =>
+  const lines = getPwdList(length).map((line, index, currArray) =>
     formatLine(index + 1, currArray.length, line)
   );
-  pwdChannel.append(`${lines.join('\n')}\n\n=== Processing finished ===\n`);
+
+  const logoLine = `SPG ${extConfig.version}`;
+  const startLine = `Lines: ${lines.length}\nLength: ${length}`;
+  const endLine = 'Processing finished';
+
+  pwdChannel.append(
+    `${logoLine}\n\n${startLine}\n\n${lines.join('\n')}\n\n${endLine}\n\n\n`
+  );
   pwdChannel.show();
 };
 
