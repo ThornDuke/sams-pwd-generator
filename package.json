@@ -4,8 +4,8 @@
   "description": "A strong generator of secure passwords for VSCode",
   "author": "Thorne Duke",
   "publisher": "ThornDuke",
-  "version": "1.1.1",
-  "icon": "icon.png",
+  "version": "1.1.2",
+  "icon": "resources/icon.png",
   "galleryBanner": {
     "theme": "dark",
     "color": "#001b33"

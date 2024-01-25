@@ -14,12 +14,14 @@
 
 ## [Unreleased]
 
+-->
+
+## [1.1.2] - 2024-01-25
+
 ### Changed
 
 - Better README
 - Better configuration definition
-
--->
 
 ## [1.1.0] - 2024-01-24
 

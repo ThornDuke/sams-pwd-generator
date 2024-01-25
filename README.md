@@ -1,4 +1,4 @@
-# <!-- <img src="icon.png" alt="package icon" width="50px"/> --> Sam's Passwords Generator
+# <!-- <img src="resources/icon.png" alt="package icon" width="50px"/> --> Sam's Passwords Generator
 
 ![GitHub License](https://img.shields.io/github/license/ThornDuke/sams-pwd-generator?style=plastic&logo=gnu)
 ![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/thornduke.sams-pw-gen.svg?style=plastic&logo=visualstudiocode)
@@ -12,7 +12,11 @@
 ![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/thornduke.sams-pw-gen.svg?style=plastic)
 -->
 
-<img src="https://github.com/ThornDuke/sams-pwd-generator/raw/master/demo.gif" alt="demo" width="650" />
+<img
+  src="https://github.com/ThornDuke/sams-pwd-generator/raw/master/resources/demo.gif"
+  alt="demo"
+  width="650"
+  />
 
 ## Features
 
