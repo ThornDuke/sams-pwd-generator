@@ -2,6 +2,8 @@
 
 ![GitHub License](https://img.shields.io/github/license/ThornDuke/sams-pwd-generator?style=plastic&logo=gnu)
 ![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/thornduke.sams-pw-gen.svg?style=plastic&logo=visualstudiocode)
+![Static Badge](https://img.shields.io/badge/strong-security?style=plastic&logo=keepassxc&logoColor=white&label=security&labelColor=black&color=red)
+![Static Badge](https://img.shields.io/badge/enabled-crypto?style=plastic&logo=alienware&logoColor=white&label=crypto&labelColor=black&color=green)
 
 <!--
 ![Visual Studio Marketplace Rating Stars](https://img.shields.io/visual-studio-marketplace/stars/thornduke.sams-pw-gen.svg?style=plastic)
@@ -10,10 +12,7 @@
 ![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/thornduke.sams-pw-gen.svg?style=plastic)
 -->
 
-<img src="demo.gif" alt="example video" width="650"/>
-<!--
-<img src="https://github.com/ThornDuke/sams-pwd-generator/raw/main/demo.gif" alt="demo" width="650" />
--->
+<img src="https://github.com/ThornDuke/sams-pwd-generator/raw/master/demo.gif" alt="demo" width="650" />
 
 ## Features
 
