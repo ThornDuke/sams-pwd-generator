@@ -5,7 +5,7 @@
   "author": "Thorne Duke",
   "publisher": "ThornDuke",
   "version": "1.1.0",
-  "icon": "icon.png",
+  "icon": "./src/resources/icon.png",
   "galleryBanner": {
     "theme": "dark",
     "color": "#001b33"
@@ -71,18 +71,24 @@
           "sampwdgenerator.passwords": {
             "type": "number",
             "default": 10,
+            "minimum": 1,
+            "maximum": 50,
             "order": 0,
             "markdownDescription": "Amount of password produced each time the command is called."
           },
           "sampwdgenerator.uppercases": {
             "type": "string",
             "default": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+            "minLength": 1,
+            "maxLength": 200,
             "order": 1,
             "markdownDescription": "A string containing the uppercase characters used to construct passwords."
           },
           "sampwdgenerator.uppercaseOccurrences": {
             "type": "number",
             "default": 1,
+            "minimum": 1,
+            "maximum": 2,
             "enum": [
               1,
               2
@@ -93,12 +99,16 @@
           "sampwdgenerator.lowercases": {
             "type": "string",
             "default": "abcdefghijklmnopqrstuvwxyz",
+            "minLength": 1,
+            "maxLength": 200,
             "order": 3,
             "markdownDescription": "A string containing the lowercase characters used to construct passwords."
           },
           "sampwdgenerator.lowercaseOccurrences": {
             "type": "number",
             "default": 1,
+            "minimum": 1,
+            "maximum": 2,
             "enum": [
               1,
               2
@@ -109,12 +119,16 @@
           "sampwdgenerator.numbers": {
             "type": "string",
             "default": "0123456789",
+            "minLength": 1,
+            "maxLength": 200,
             "order": 5,
             "markdownDescription": "A string containing the numbers used to construct passwords."
           },
           "sampwdgenerator.numberOccurrences": {
             "type": "number",
             "default": 1,
+            "minimum": 1,
+            "maximum": 2,
             "enum": [
               1,
               2
@@ -125,12 +139,16 @@
           "sampwdgenerator.symbols": {
             "type": "string",
             "default": "£$%&*§#@",
+            "minLength": 1,
+            "maxLength": 200,
             "order": 7,
             "markdownDescription": "A string containing the symbols used to construct passwords."
           },
           "sampwdgenerator.symbolOccurrences": {
             "type": "number",
             "default": 1,
+            "minimum": 1,
+            "maximum": 2,
             "enum": [
               1,
               2

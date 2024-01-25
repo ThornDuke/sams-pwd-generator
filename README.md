@@ -1,7 +1,7 @@
-# <img src="icon.png" alt="package icon" width="50px"/> Sam's Passwords Generator
+# <img src="./src/resources/icon.png" alt="package icon" width="50px"/> Sam's Passwords Generator
 
 ![GitHub License](https://img.shields.io/github/license/ThornDuke/sams-pwd-generator?style=plastic&logo=gnu)
-![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/thornduke.sams-pw-gen.svg?style=plastic)
+![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/thornduke.sams-pw-gen.svg?style=plastic&logo=visualstudiocode)
 
 <!--
 ![Visual Studio Marketplace Rating Stars](https://img.shields.io/visual-studio-marketplace/stars/thornduke.sams-pw-gen.svg?style=plastic)
@@ -14,7 +14,7 @@ This extension allows you to easily create passwords of different lengths, from
 8 to 16 characters. Passwords all have at least one uppercase character, one
 lowercase character, one number, and one special character.
 
-<img src="video04.gif" alt="example video" width="700"/>
+<img src="./src/resources/demo.gif" alt="example video" width="650"/>
 
 You can configure the character set that will be used to create passwords, the
 number of passwords produced with every 'spin', and the minimum number of
