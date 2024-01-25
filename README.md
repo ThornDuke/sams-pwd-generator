@@ -20,7 +20,7 @@
 
 ## Features
 
-This extension allows you to easily create strorng passwords of different
+This extension allows you to easily create strong passwords of different
 lengths, from 8 to 16 characters. Passwords all have at least one uppercase
 character, one lowercase character, one number, and one special character.
 
