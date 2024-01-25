@@ -17,13 +17,13 @@
 
 ## Features
 
-This extension allows you to easily create passwords of different lengths, from
-8 to 16 characters. Passwords all have at least one uppercase character, one
-lowercase character, one number, and one special character.
+This extension allows you to easily create strorng passwords of different
+lengths, from 8 to 16 characters. Passwords all have at least one uppercase
+character, one lowercase character, one number, and one special character.
 
 You can configure the character set that will be used to create passwords, the
 number of passwords produced with every 'spin', and the minimum number of
-uppercase characters, lowercase characters, numbers or symbols that must be
+uppercase characters, lowercase characters, digits or symbols that must be
 contained in each password.
 
 The randomization engine is based on the `crypto` library, which is
@@ -32,7 +32,7 @@ The randomization engine is based on the `crypto` library, which is
 ## Installation
 
 1. Open **Extensions** sidebar panel in VS Code. `View → Extensions`
-2. Search for `Sam's Password Generator`
+2. Search for `Sam's Passwords Generator`
 3. Click `Install` to install it.
 
 ## How to use
@@ -53,8 +53,8 @@ You can choose from the following commands:
 - `Password 16 char long`
 
 When you choose one of these commands the `Output` tab in VSCode opens showing a
-list of ten passwords with the chosen length. Choose one, copy and paste it into
-the editor where you need it.
+list of passwords with the chosen length. Choose one, copy and paste it into the
+editor where you need it.
 
 ## Managing settings
 
