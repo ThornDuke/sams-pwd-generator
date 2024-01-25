@@ -17,6 +17,7 @@
 ### Changed
 
 - Better README
+- Better configuration definition
 
 -->
 
