@@ -35,7 +35,7 @@
 
 - Responds immediately to configuration changes
 
-## [1.0.1] - 2023-01-21
+## [1.0.1] - 2024-01-21
 
 ### Fixed
 
