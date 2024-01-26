@@ -63,6 +63,32 @@ When you choose one of these commands the `Output` tab in VSCode opens showing a
 list of passwords with the chosen length. Choose one, copy and paste it into the
 editor where you need it.
 
+You also have another command available:
+
+- `Password of any length`
+
+By selecting it you can generate a list of passwords of any length between 8 and
+64 characters by typing a number in the vscode input box. The number of
+passwords produced can be changed in the extension settings as explained below.
+
+<img
+  src="resources/demo02.gif"
+  alt="demo"
+  width="650"
+  />
+
+If you don't have time to waste and all you want is ONE password, the extension
+provides a context menu command: `Generate password at cursor`, with which a
+password is produced and inserted at the point where the cursor is located. If
+text is selected, the entered password replaces the selected text. If there are
+many cursors, the extension create a password for each of them.
+
+<img
+  src="resources/demo03.gif"
+  alt="demo"
+  width="650"
+  />
+
 ## Managing settings
 
 Click on `Manage / Extension settings` and change the values ​​according to your
@@ -88,16 +114,6 @@ Alternatively, you can change the values ​​directly in the configuration fil
   "sampwdgenerator.symbolOccurrences": 1
 }
 ```
-
-<!--
-Whether you changed the parameters manually in `settings.json` or in the
-plugin's `Settings` page, **you must restart VSCode or reload the window** for
-the changes to take effect:
-
-1. `F1` or `Ctrl+Shift+P` or `Shift+Command+P`;
-2. type `reload window`;
-3. choose `Developer: Reload Window`;
--->
 
 ## Acknowledgements
 

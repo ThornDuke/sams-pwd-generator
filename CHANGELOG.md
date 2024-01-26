@@ -8,13 +8,15 @@
 ### Removed
 -->
 
-## [Unreleased]
+## [1.2.0] - 2024-01-28
 
 ### Added
 
-- A context menu command that creates a password and prints it at the cursor
-  location, possibly replacing the selected text. If there are many cursors,
-  create a password for each of them.
+- A context menu command (`Generate password at cursor`) that creates a password
+  and prints it at the cursor location, possibly replacing the selected text. If
+  there are many cursors, create a password for each of them.
+- A command (`Password of any length`) that asks a user for a number and creates
+  a list of password with length equal to that number.
 
 ## Fixed
 

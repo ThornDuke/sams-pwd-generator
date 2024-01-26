@@ -75,11 +75,15 @@ const generatePwdAtCursor = (editor: vscode.TextEditor | undefined) => {
   });
 };
 
+/**
+ * Ask a user for a number and creates a list of
+ * password with length equal to that number.
+ */
 const createPwdFreeLength = async () => {
   const desiredLength = await vscode.window.showInputBox({
     placeHolder: 'Password length',
     prompt: 'Length of the password (only integer numbers from 8 to 64)',
-    title: 'Generate a password',
+    title: 'Generate a list of passwords',
     validateInput: (text) => {
       const test =
         !isNaN(parseInt(text)) &&
@@ -90,12 +94,8 @@ const createPwdFreeLength = async () => {
     },
   });
 
-  if (
-    desiredLength !== '' &&
-    desiredLength !== undefined &&
-    !isNaN(parseInt(desiredLength))
-  ) {
-    createAndShowPwds(parseInt(desiredLength));
+  if (desiredLength !== '' && desiredLength !== undefined) {
+    createAndShowPwds(Number(desiredLength));
   }
 };
 
