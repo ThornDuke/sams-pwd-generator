@@ -283,6 +283,14 @@ suite('Sams Password Generator: generator.ts', () => {
     );
   });
 
+  test('Testing getCursorPwd() string', () => {
+    assert.equal(
+      typeof generator.getCursorPwd(),
+      'string',
+      'Has to return a string'
+    );
+  });
+
   test('Testing getPwdList(): string[]', () => {
     const result = generator.getPwdList(8);
 
