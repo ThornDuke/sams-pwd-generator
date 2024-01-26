@@ -13,7 +13,7 @@
 -->
 
 <img
-  src="https://github.com/ThornDuke/sams-pwd-generator/raw/master/resources/demo.gif"
+  src="https://github.com/ThornDuke/sams-pwd-generator/raw/master/resources/demo01.gif"
   alt="demo"
   width="650"
   />
@@ -72,7 +72,7 @@ By selecting it you can generate a list of passwords of any length between 8 and
 passwords produced can be changed in the extension settings as explained below.
 
 <img
-  src="resources/demo02.gif"
+  src="https://github.com/ThornDuke/sams-pwd-generator/raw/master/resources/demo02.gif"
   alt="demo"
   width="650"
   />
@@ -84,7 +84,7 @@ text is selected, the entered password replaces the selected text. If there are
 many cursors, the extension create a password for each of them.
 
 <img
-  src="resources/demo03.gif"
+  src="https://github.com/ThornDuke/sams-pwd-generator/raw/master/resources/demo03.gif"
   alt="demo"
   width="650"
   />
