@@ -1,10 +1,10 @@
 {
   "name": "sams-pw-gen",
   "displayName": "Sam's Passwords Generator",
-  "description": "A strong generator of secure passwords for VSCode",
-  "author": "Thorne Duke",
+  "description": "The definitive solution to generate secure passwords in VSCode",
+  "author": "Thorn Duke",
   "publisher": "ThornDuke",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "icon": "resources/icon.png",
   "galleryBanner": {
     "theme": "dark",

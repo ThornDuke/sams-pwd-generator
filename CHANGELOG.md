@@ -1,20 +1,23 @@
 # Change Log
 
 <!--
---- EXAMPLE:
-
 ## [major.minor.patch] - yyyy-mm-dd
-
 ### Added
 ### Fixed
 ### Changed
 ### Removed
-
---- UNRELEASED
+-->
 
 ## [Unreleased]
 
--->
+## Fixed
+
+- A lot of little bugfixing
+- The package is much smaller in size
+
+## Changed
+
+- Some improvements in README.md
 
 ## [1.1.2] - 2024-01-25
 

@@ -1,4 +1,4 @@
-# <!-- <img src="resources/icon.png" alt="package icon" width="50px"/> --> Sam's Passwords Generator
+# Sam's Passwords Generator
 
 ![GitHub License](https://img.shields.io/github/license/ThornDuke/sams-pwd-generator?style=plastic&logo=gnu)
 ![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/thornduke.sams-pw-gen.svg?style=plastic&logo=visualstudiocode)
@@ -31,6 +31,10 @@ contained in each password.
 
 The randomization engine is based on the `crypto` library, which is
 [considered cryptographically secure](https://nodejs.org/api/crypto.html#crypto:~:text=js%20crypto%20constants-,Crypto,-%23).
+
+Thanks to the use of the `crypto` library and an effective shuffling algorithm,
+the passwords produced are aesthetically beautiful and expressive of a high
+level of entropy.
 
 ## Installation
 
