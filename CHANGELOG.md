@@ -12,9 +12,9 @@
 
 ### Added
 
-- Creates a password and prints it at the cursor location, possibly replacing
-  the selected text. If there are many cursors, create a password for each of
-  them.
+- A context menu command that creates a password and prints it at the cursor
+  location, possibly replacing the selected text. If there are many cursors,
+  create a password for each of them.
 
 ## Fixed
 

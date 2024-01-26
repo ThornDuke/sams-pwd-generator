@@ -66,6 +66,10 @@
       {
         "command": "sams-pw-gen.generateAtCursor",
         "title": "Generate Password At Cursor"
+      },
+      {
+        "command": "sams-pw-gen.askUser",
+        "title": "Password of any length"
       }
     ],
     "menus": {

@@ -75,6 +75,30 @@ const generatePwdAtCursor = (editor: vscode.TextEditor | undefined) => {
   });
 };
 
+const createPwdFreeLength = async () => {
+  const desiredLength = await vscode.window.showInputBox({
+    placeHolder: 'Password length',
+    prompt: 'Length of the password (only integer numbers from 8 to 64)',
+    title: 'Generate a password',
+    validateInput: (text) => {
+      const test =
+        !isNaN(parseInt(text)) &&
+        Number.isInteger(Number(text)) &&
+        Number(text) >= 8 &&
+        Number(text) <= 64;
+      return test ? null : 'Incorrect input';
+    },
+  });
+
+  if (
+    desiredLength !== '' &&
+    desiredLength !== undefined &&
+    !isNaN(parseInt(desiredLength))
+  ) {
+    createAndShowPwds(parseInt(desiredLength));
+  }
+};
+
 /**
  * This method is called when your extension is activated
  * Your extension is activated the very first time the command is executed
@@ -90,10 +114,17 @@ export function activate(context: vscode.ExtensionContext) {
       })
     );
   }
+  // Other commands
   context.subscriptions.push(
     vscode.commands.registerCommand('sams-pw-gen.generateAtCursor', () => {
       const editor = vscode.window.activeTextEditor;
       generatePwdAtCursor(editor);
+    })
+  );
+
+  context.subscriptions.push(
+    vscode.commands.registerCommand('sams-pw-gen.askUser', () => {
+      createPwdFreeLength();
     })
   );
 }
