@@ -111,7 +111,8 @@ Alternatively, you can change the values ​​directly in the configuration fil
   "sampwdgenerator.numbers": "0123456789",
   "sampwdgenerator.numberOccurrences": 1,
   "sampwdgenerator.symbols": "£$%&*§#@",
-  "sampwdgenerator.symbolOccurrences": 1
+  "sampwdgenerator.symbolOccurrences": 1,
+  "sampwdgenerator.lengthAtCursor"
 }
 ```
 
