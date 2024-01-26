@@ -62,8 +62,21 @@
       {
         "command": "sams-pw-gen.getpwd16",
         "title": "Password 16 char long"
+      },
+      {
+        "command": "sams-pw-gen.generateAtCursor",
+        "title": "Generate Password At Cursor"
       }
     ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorTextFocus",
+          "command": "sams-pw-gen.generateAtCursor",
+          "group": "sams-pw-gen"
+        }
+      ]
+    },
     "configuration": [
       {
         "title": "Sam's Password Generator",
@@ -155,6 +168,14 @@
             ],
             "order": 8,
             "markdownDescription": "Minimum amount of special characters contained in each password"
+          },
+          "sampwdgenerator.lengthAtCursor": {
+            "type": "number",
+            "default": 12,
+            "minimum": 8,
+            "maximum": 64,
+            "order": 9,
+            "markdownDescription": "Length of the password generated at the cursor position"
           }
         }
       }

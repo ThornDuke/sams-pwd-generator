@@ -8,7 +8,7 @@ import * as vscode from 'vscode';
 /**
  * The engine of the extension
  */
-import { getPwdList } from './generator';
+import { getPwdList, getCursorPwd } from './generator';
 import extConfig from '../package.json';
 
 /**
@@ -61,6 +61,21 @@ const createAndShowPwds = (length: number) => {
 };
 
 /**
+ * Creates a password and prints it at the cursor location,
+ * possibly replacing the selected text. If there are many
+ * cursors, create a password for each of them.
+ *
+ * @param {vscode.TextEditor} editor
+ */
+const generatePwdAtCursor = (editor: vscode.TextEditor | undefined) => {
+  editor?.edit((editBuilder) => {
+    for (const selection of editor.selections) {
+      editBuilder.replace(selection, getCursorPwd());
+    }
+  });
+};
+
+/**
  * This method is called when your extension is activated
  * Your extension is activated the very first time the command is executed
  */
@@ -75,6 +90,12 @@ export function activate(context: vscode.ExtensionContext) {
       })
     );
   }
+  context.subscriptions.push(
+    vscode.commands.registerCommand('sams-pw-gen.generateAtCursor', () => {
+      const editor = vscode.window.activeTextEditor;
+      generatePwdAtCursor(editor);
+    })
+  );
 }
 
 // This method is called when your extension is deactivated

@@ -16,6 +16,7 @@ const defaultValues = {
   numberOccurrences: 1,
   symbols: '£$%&*§#@',
   symbolOccurrences: 1,
+  lengthAtCursor: 12,
 };
 
 /**
@@ -422,6 +423,34 @@ export const getPwd = (length: number): string => {
 
   if ($$debugging) {
     console.log('§> getPwd', { length, pool, result });
+  }
+
+  return result;
+};
+
+/**
+ * Create a password whose length is taken from
+ * the `lengthAtCursor` config value.
+ *
+ * @returns {string} A password
+ */
+export const getCursorPwd = (): string => {
+  let result = '';
+  let length = 0;
+  const value = vscode.workspace
+    .getConfiguration(configKey)
+    .get('lengthAtCursor');
+
+  if (typeof value == 'number' && value !== 0) {
+    length = value;
+  } else {
+    length = defaultValues.lengthAtCursor;
+  }
+
+  result = getPwd(length);
+
+  if ($$debugging) {
+    console.log('§> getCursorPwd', { value, length, result });
   }
 
   return result;
