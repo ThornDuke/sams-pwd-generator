@@ -20,9 +20,11 @@
 
 ## Features
 
-This extension allows you to easily create strong passwords of different
-lengths, from 8 to 16 characters. Passwords all have at least one uppercase
-character, one lowercase character, one number, and one special character.
+This extension allows you to easily create complex and solid passwords of
+different lengths, from 8 to 16 characters and more. Passwords can be created
+with a specific command or with the context menu. All passwords have at least
+one uppercase character, one lowercase character, one number, and one special
+character.
 
 You can configure the character set that will be used to create passwords, the
 number of passwords produced with every 'spin', and the minimum number of
@@ -44,6 +46,8 @@ level of entropy.
 
 ## How to use
 
+### 1. Fixed-length password
+
 At any time, you can press `⌘ + ⇧ + P` on Mac or `Control + ⇧ + P` on Windows /
 Linux and start typing `Password`.
 
@@ -63,6 +67,8 @@ When you choose one of these commands the `Output` tab in VSCode opens showing a
 list of passwords with the chosen length. Choose one, copy and paste it into the
 editor where you need it.
 
+### 2. Arbitrary-length password
+
 You also have another command available:
 
 - `Password of any length`
@@ -77,11 +83,15 @@ passwords produced can be changed in the extension settings as explained below.
   width="650"
   />
 
+### 3. _On the fly_ password
+
 If you don't have time to waste and all you want is ONE password, the extension
 provides a context menu command: `Generate password at cursor`, with which a
 password is produced and inserted at the point where the cursor is located. If
 text is selected, the entered password replaces the selected text. If there are
-many cursors, the extension create a password for each of them.
+many cursors, the extension create a password for each of them. You can change
+the length of the password produced with this option by acting on the
+`Length at cursor` configuration parameter as explained in the next paragraph.
 
 <img
   src="https://github.com/ThornDuke/sams-pwd-generator/raw/master/resources/demo03.gif"
@@ -112,7 +122,7 @@ Alternatively, you can change the values ​​directly in the configuration fil
   "sampwdgenerator.numberOccurrences": 1,
   "sampwdgenerator.symbols": "£$%&*§#@",
   "sampwdgenerator.symbolOccurrences": 1,
-  "sampwdgenerator.lengthAtCursor"
+  "sampwdgenerator.lengthAtCursor": 12
 }
 ```
 

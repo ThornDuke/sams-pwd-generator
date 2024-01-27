@@ -8,7 +8,15 @@
 ### Removed
 -->
 
-## [1.2.0] - 2024-01-28
+## [1.2.1] - 2024-01-27
+
+Published version.
+
+### Fixed
+
+- Better <README.md>
+
+## [1.2.0] - 2024-01-26
 
 ### Added
 
