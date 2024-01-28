@@ -1,6 +1,5 @@
-import * as vscode from 'vscode';
 import crypto from 'node:crypto';
-import { $$debugging, configKey } from './globals';
+import { $$debugging, getConfigValueAtKey } from './globals';
 
 /**
  * Default values ​​to use to construct passwords. The values ​​are taken from
@@ -17,18 +16,6 @@ const defaultValues = {
   symbols: '£$%&*§#@',
   symbolOccurrences: 1,
   lengthAtCursor: 12,
-};
-
-const getConfigValueAtKey = (key: string): string | number | undefined => {
-  const value: string | number | undefined = vscode.workspace
-    .getConfiguration(configKey)
-    .get(key);
-
-  if ($$debugging) {
-    console.log('§> getConfigValueAtKey', { value });
-  }
-
-  return value;
 };
 
 /**
