@@ -8,6 +8,18 @@
 ### Removed
 -->
 
+## [Unreleased]
+
+### Changed
+
+- Many improvements in README.md
+- Bugfixing and refactoring
+- The package size is even smaller
+
+### Removed
+
+- vsc-extension-quickstart.md
+
 ## [1.2.1] - 2024-01-27
 
 Published version.
