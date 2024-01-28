@@ -128,7 +128,7 @@ Alternatively, you can change the values ​​directly in the configuration fil
 
 ## Contributing
 
-Do you want to contribute? you're welcome!
+Do you want to contribute? You're welcome!
 
 Whether you want to:
 
