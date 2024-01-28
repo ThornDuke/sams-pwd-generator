@@ -19,6 +19,18 @@ const defaultValues = {
   lengthAtCursor: 12,
 };
 
+const getConfigValueAtKey = (key: string): string | number | undefined => {
+  const value: string | number | undefined = vscode.workspace
+    .getConfiguration(configKey)
+    .get(key);
+
+  if ($$debugging) {
+    console.log('§> getConfigValueAtKey', { value });
+  }
+
+  return value;
+};
+
 /**
  * Produces a random integer between _min_ (inclusive)
  * and _max_ (inclusive), using the `crypto` library
@@ -44,10 +56,10 @@ export const randomInt = (min: number, max: number): number => {
  */
 export const getPwdListLength = (): number => {
   let result = 0;
-  const value = vscode.workspace.getConfiguration(configKey).get('passwords');
+  const configValue = getConfigValueAtKey('passwords');
 
-  if (typeof value === 'number' && value !== 0) {
-    result = value;
+  if (typeof configValue === 'number' && configValue !== 0) {
+    result = configValue;
   } else {
     result = defaultValues.passwords;
   }
@@ -57,7 +69,7 @@ export const getPwdListLength = (): number => {
   }
 
   if ($$debugging) {
-    console.log('§> getPwdListLength', { value, result });
+    console.log('§> getPwdListLength', { configValue, result });
   }
 
   return result;
@@ -71,16 +83,16 @@ export const getPwdListLength = (): number => {
  */
 export const getUpperCases = (): string[] => {
   let result = [];
-  const values = vscode.workspace.getConfiguration(configKey).get('uppercases');
+  const configValues = getConfigValueAtKey('uppercases');
 
-  if (typeof values === 'string' && values.length !== 0) {
-    result = values.split('');
+  if (typeof configValues === 'string' && configValues.length !== 0) {
+    result = configValues.split('');
   } else {
     result = defaultValues.uppercases.split('');
   }
 
   if ($$debugging) {
-    console.log('§> getUpperCases', { values, result });
+    console.log('§> getUpperCases', { configValues, result });
   }
 
   return result;
@@ -94,12 +106,10 @@ export const getUpperCases = (): string[] => {
  */
 export const getUpperCasesOccurrences = (): number => {
   let result = 0;
-  const value = vscode.workspace
-    .getConfiguration(configKey)
-    .get('uppercaseOccurrences');
+  const configValue = getConfigValueAtKey('uppercaseOccurrences');
 
-  if (typeof value === 'number' && value !== 0) {
-    result = value;
+  if (typeof configValue === 'number' && configValue !== 0) {
+    result = configValue;
   } else {
     result = defaultValues.uppercaseOccurrences;
   }
@@ -111,7 +121,7 @@ export const getUpperCasesOccurrences = (): number => {
   }
 
   if ($$debugging) {
-    console.log('§> getUpperCasesOccurrences', { value, result });
+    console.log('§> getUpperCasesOccurrences', { configValue, result });
   }
 
   return result;
@@ -125,16 +135,16 @@ export const getUpperCasesOccurrences = (): number => {
  */
 export const getLowerCases = (): string[] => {
   let result = [];
-  const values = vscode.workspace.getConfiguration(configKey).get('lowercases');
+  const configValues = getConfigValueAtKey('lowercases');
 
-  if (typeof values === 'string' && values.length !== 0) {
-    result = values.split('');
+  if (typeof configValues === 'string' && configValues.length !== 0) {
+    result = configValues.split('');
   } else {
     result = defaultValues.lowercases.split('');
   }
 
   if ($$debugging) {
-    console.log('§> getLowerCases', { values, result });
+    console.log('§> getLowerCases', { configValues, result });
   }
 
   return result;
@@ -148,12 +158,10 @@ export const getLowerCases = (): string[] => {
  */
 export const getLowerCasesOccurrences = (): number => {
   let result = 0;
-  const value = vscode.workspace
-    .getConfiguration(configKey)
-    .get('lowercaseOccurrences');
+  const configValue = getConfigValueAtKey('lowercaseOccurrences');
 
-  if (typeof value === 'number' && value !== 0) {
-    result = value;
+  if (typeof configValue === 'number' && configValue !== 0) {
+    result = configValue;
   } else {
     result = defaultValues.lowercaseOccurrences;
   }
@@ -165,7 +173,7 @@ export const getLowerCasesOccurrences = (): number => {
   }
 
   if ($$debugging) {
-    console.log('§> getLowerCasesOccurrences', { value, result });
+    console.log('§> getLowerCasesOccurrences', { configValue, result });
   }
 
   return result;
@@ -179,16 +187,16 @@ export const getLowerCasesOccurrences = (): number => {
  */
 export const getNumbers = (): string[] => {
   let result = [];
-  const values = vscode.workspace.getConfiguration(configKey).get('numbers');
+  const configValues = getConfigValueAtKey('numbers');
 
-  if (typeof values === 'string' && values.length !== 0) {
-    result = values.split('');
+  if (typeof configValues === 'string' && configValues.length !== 0) {
+    result = configValues.split('');
   } else {
     result = defaultValues.numbers.split('');
   }
 
   if ($$debugging) {
-    console.log('§> getNumbers', { values, result });
+    console.log('§> getNumbers', { configValues, result });
   }
 
   return result;
@@ -202,12 +210,10 @@ export const getNumbers = (): string[] => {
  */
 export const getNumberOccurrences = (): number => {
   let result = 0;
-  const value = vscode.workspace
-    .getConfiguration(configKey)
-    .get('numberOccurrences');
+  const configValue = getConfigValueAtKey('numberOccurrences');
 
-  if (typeof value === 'number' && value !== 0) {
-    result = value;
+  if (typeof configValue === 'number' && configValue !== 0) {
+    result = configValue;
   } else {
     result = defaultValues.numberOccurrences;
   }
@@ -219,7 +225,7 @@ export const getNumberOccurrences = (): number => {
   }
 
   if ($$debugging) {
-    console.log('§> getNumberOccurrences', { value, result });
+    console.log('§> getNumberOccurrences', { configValue, result });
   }
 
   return result;
@@ -233,16 +239,16 @@ export const getNumberOccurrences = (): number => {
  */
 export const getSymbols = (): string[] => {
   let result = [];
-  const values = vscode.workspace.getConfiguration(configKey).get('symbols');
+  const configValues = getConfigValueAtKey('symbols');
 
-  if (typeof values === 'string' && values.length !== 0) {
-    result = values.split('');
+  if (typeof configValues === 'string' && configValues.length !== 0) {
+    result = configValues.split('');
   } else {
     result = defaultValues.symbols.split('');
   }
 
   if ($$debugging) {
-    console.log('§> getSymbols', { values, result });
+    console.log('§> getSymbols', { configValues, result });
   }
 
   return result;
@@ -256,12 +262,10 @@ export const getSymbols = (): string[] => {
  */
 export const getSymbolOccurrences = (): number => {
   let result = 0;
-  const value = vscode.workspace
-    .getConfiguration(configKey)
-    .get('symbolOccurrences');
+  const configValue = getConfigValueAtKey('symbolOccurrences');
 
-  if (typeof value === 'number' && value !== 0) {
-    result = value;
+  if (typeof configValue === 'number' && configValue !== 0) {
+    result = configValue;
   } else {
     result = defaultValues.symbolOccurrences;
   }
@@ -273,7 +277,7 @@ export const getSymbolOccurrences = (): number => {
   }
 
   if ($$debugging) {
-    console.log('§> getSymbolOccurrences', { value, result });
+    console.log('§> getSymbolOccurrences', { configValue, result });
   }
 
   return result;
@@ -437,12 +441,10 @@ export const getPwd = (length: number): string => {
 export const getCursorPwd = (): string => {
   let result = '';
   let length = 0;
-  const value = vscode.workspace
-    .getConfiguration(configKey)
-    .get('lengthAtCursor');
+  const configValue = getConfigValueAtKey('lengthAtCursor');
 
-  if (typeof value === 'number' && value !== 0) {
-    length = value;
+  if (typeof configValue === 'number' && configValue !== 0) {
+    length = configValue;
   } else {
     length = defaultValues.lengthAtCursor;
   }
@@ -450,7 +452,7 @@ export const getCursorPwd = (): string => {
   result = getPwd(length);
 
   if ($$debugging) {
-    console.log('§> getCursorPwd', { value, length, result });
+    console.log('§> getCursorPwd', { configValue, length, result });
   }
 
   return result;
