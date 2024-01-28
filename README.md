@@ -46,7 +46,7 @@ level of entropy.
 
 ## How to use
 
-### 1. Fixed-length password
+### 1. Fixed-length passwords
 
 At any time, you can press `⌘ + ⇧ + P` on Mac or `Control + ⇧ + P` on Windows /
 Linux and start typing `Password`.
@@ -67,7 +67,7 @@ When you choose one of these commands the `Output` tab in VSCode opens showing a
 list of passwords with the chosen length. Choose one, copy and paste it into the
 editor where you need it.
 
-### 2. Arbitrary-length password
+### 2. Arbitrary-length passwords
 
 You also have another command available:
 
@@ -83,7 +83,7 @@ passwords produced can be changed in the extension settings as explained below.
   width="650"
   />
 
-### 3. _On the fly_ password
+### 3. _On the fly_ passwords
 
 If you don't have time to waste and all you want is ONE password, the extension
 provides a context menu command: `Generate password at cursor`, with which a
@@ -125,6 +125,19 @@ Alternatively, you can change the values ​​directly in the configuration fil
   "sampwdgenerator.lengthAtCursor": 12
 }
 ```
+
+## Contributing
+
+Do you want to contribute? you're welcome!
+
+Whether you want to:
+
+- report a bug
+- submit a fix
+- propose new features
+
+open an
+[issue on github](https://github.com/ThornDuke/sams-pwd-generator/issues).
 
 ## Acknowledgements
 
