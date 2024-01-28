@@ -14,7 +14,7 @@ Published version.
 
 ### Fixed
 
-- Better <README.md>
+- Better README.md
 
 ## [1.2.0] - 2024-01-26
 
