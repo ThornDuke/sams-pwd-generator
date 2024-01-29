@@ -38,12 +38,12 @@ Published version.
 - A command (`Password of any length`) that asks a user for a number and creates
   a list of password with length equal to that number.
 
-## Fixed
+### Fixed
 
 - A lot of little bugfixing
 - The package is much smaller in size
 
-## Changed
+### Changed
 
 - Some improvements in README.md
 
