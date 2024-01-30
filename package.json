@@ -91,7 +91,7 @@
             "minimum": 1,
             "maximum": 50,
             "order": 0,
-            "markdownDescription": "Amount of password produced each time the command is called."
+            "markdownDescription": "Amount of password produced each time the command is called. Default is `10`."
           },
           "sampwdgenerator.uppercases": {
             "type": "string",
@@ -111,7 +111,7 @@
               2
             ],
             "order": 2,
-            "markdownDescription": "Minimum amount of uppercase characters contained in each password"
+            "markdownDescription": "Minimum amount of uppercase characters contained in each password. Default is `1`."
           },
           "sampwdgenerator.lowercases": {
             "type": "string",
@@ -131,7 +131,7 @@
               2
             ],
             "order": 4,
-            "markdownDescription": "Minimum amount of lowercase characters contained in each password"
+            "markdownDescription": "Minimum amount of lowercase characters contained in each password. Default is `1`."
           },
           "sampwdgenerator.numbers": {
             "type": "string",
@@ -151,7 +151,7 @@
               2
             ],
             "order": 6,
-            "markdownDescription": "Minimum amount of digits contained in each password"
+            "markdownDescription": "Minimum amount of digits contained in each password. Default is `1`."
           },
           "sampwdgenerator.symbols": {
             "type": "string",
@@ -171,7 +171,7 @@
               2
             ],
             "order": 8,
-            "markdownDescription": "Minimum amount of special characters contained in each password"
+            "markdownDescription": "Minimum amount of special characters contained in each password. Default is `1`."
           },
           "sampwdgenerator.lengthAtCursor": {
             "type": "number",
@@ -179,13 +179,13 @@
             "minimum": 8,
             "maximum": 64,
             "order": 9,
-            "markdownDescription": "Length of the password generated at the cursor position"
+            "markdownDescription": "Length of the password generated at the cursor position. Default is `12`."
           },
           "sampwdgenerator.showContextMenuCommand": {
             "type": "boolean",
             "default": true,
             "order": 10,
-            "markdownDescription": "Show the command `Generate Password At Cursor` in the context menu"
+            "markdownDescription": "Show the command `Generate Password At Cursor` in the context menu. Default is `true`."
           }
         }
       }
@@ -210,7 +210,9 @@
     "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
     "esbuild": "npm run esbuild-base -- --sourcemap",
     "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
-    "test-compile": "tsc -p ./"
+    "test-compile": "tsc -p ./",
+    "publish": "vsce publish --githubBranch master",
+    "pack": "vsce pack --githubBranch master"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.6",
