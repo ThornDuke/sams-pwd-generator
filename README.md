@@ -89,9 +89,14 @@ If you don't have time to waste and all you want is ONE password, the extension
 provides a context menu command: `Generate password at cursor`, with which a
 password is produced and inserted at the point where the cursor is located. If
 text is selected, the entered password replaces the selected text. If there are
-many cursors, the extension create a password for each of them. You can change
-the length of the password produced with this option by acting on the
-`Length at cursor` configuration parameter as explained in the next paragraph.
+many cursors, the extension create a password for each of them.
+
+You can change the length of the password produced with this option by acting on
+the `Length at cursor` configuration parameter as explained in the next
+paragraph.
+
+In the same way you can remove the command from the context menu by changing the
+`Show Context Menu Command` parameter.
 
 <img
   src="https://github.com/ThornDuke/sams-pwd-generator/raw/master/resources/demo03.gif"
@@ -122,7 +127,8 @@ Alternatively, you can change the values ​​directly in the configuration fil
   "sampwdgenerator.numberOccurrences": 1,
   "sampwdgenerator.symbols": "£$%&*§#@",
   "sampwdgenerator.symbolOccurrences": 1,
-  "sampwdgenerator.lengthAtCursor": 12
+  "sampwdgenerator.lengthAtCursor": 12,
+  "sampwdgenerator.showContextMenuCommand": true
 }
 ```
 

@@ -10,6 +10,11 @@
 
 ## [Unreleased]
 
+### Added
+
+- Added a configuration parameter to toggle the visibility of the context menu
+  command: `sampwdgenerator.showContextMenuCommand`
+
 ### Changed
 
 - Many improvements in README.md
