@@ -25,8 +25,8 @@ export const configKey = 'sampwdgenerator';
  */
 export const getConfigValueAtKey = (
   key: string
-): string | number | undefined => {
-  const value: string | number | undefined = vscode.workspace
+): string | number | boolean | undefined => {
+  const value: string | number | boolean | undefined = vscode.workspace
     .getConfiguration(configKey)
     .get(key);
 

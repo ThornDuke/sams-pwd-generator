@@ -75,7 +75,7 @@
     "menus": {
       "editor/context": [
         {
-          "when": "editorTextFocus",
+          "when": "editorTextFocus && config.sampwdgenerator.showContextMenuCommand",
           "command": "sams-pw-gen.generateAtCursor",
           "group": "sams-pw-gen"
         }
@@ -180,6 +180,12 @@
             "maximum": 64,
             "order": 9,
             "markdownDescription": "Length of the password generated at the cursor position"
+          },
+          "sampwdgenerator.showContextMenuCommand": {
+            "type": "boolean",
+            "default": true,
+            "order": 10,
+            "markdownDescription": "Show the command 'Generate Password At Cursor' in the context menu"
           }
         }
       }
