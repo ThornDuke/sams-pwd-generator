@@ -21,7 +21,7 @@ export const configKey = 'sampwdgenerator';
  * part of the key is hardcoded into the method
  *
  * @param {string} key
- * @returns {string | number | undefined}
+ * @returns {string | number | boolean | undefined}
  */
 export const getConfigValueAtKey = (
   key: string
@@ -31,7 +31,7 @@ export const getConfigValueAtKey = (
     .get(key);
 
   if ($$debugging) {
-    console.log('§> getConfigValueAtKey', { value });
+    console.log('§> getConfigValueAtKey', { key, value });
   }
 
   return value;
