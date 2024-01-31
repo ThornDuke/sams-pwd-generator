@@ -211,7 +211,9 @@
     "esbuild": "npm run esbuild-base -- --sourcemap",
     "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
     "test-compile": "tsc -p ./",
+    "publish:prerelease": "vsce publish --githubBranch master --pre-release",
     "publish": "vsce publish --githubBranch master",
+    "pack:prerelease": "vsce pack --githubBranch master --pre-release",
     "pack": "vsce pack --githubBranch master"
   },
   "devDependencies": {

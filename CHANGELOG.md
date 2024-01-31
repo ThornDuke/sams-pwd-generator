@@ -20,6 +20,7 @@
 - Many improvements in README.md
 - Bugfixing and refactoring
 - The package size is even smaller
+- Parameters are better explained in the `settings` page.
 
 ### Removed
 
