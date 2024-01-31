@@ -5,3 +5,4 @@ node_modules
 *-quickstart.md
 *-notes.md
 *.vsix
+.DS_Store
