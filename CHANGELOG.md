@@ -25,6 +25,7 @@
 ### Removed
 
 - vsc-extension-quickstart.md
+- .DS_Store
 
 ## [1.2.1] - 2024-01-27
 

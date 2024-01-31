@@ -11,3 +11,4 @@ project-notes-md
 **/*.ts
 **/.vscode-test.*
 **/*.gif
+.DS_Store
