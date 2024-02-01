@@ -1,5 +1,6 @@
 import crypto from 'node:crypto';
-import { $$debugging, getConfigValueAtKey } from './globals';
+import { $$debugging, getConfigValueAtKey, configKey } from './globals';
+import packageData from '../package.json';
 
 /**
  * Default values ​​to use to construct passwords. The values ​​are taken from
@@ -43,7 +44,14 @@ export const randomInt = (min: number, max: number): number => {
  */
 export const getPwdListLength = (): number => {
   let result = 0;
-  const configValue = getConfigValueAtKey('passwords');
+  const key = 'passwords';
+  const configValue = getConfigValueAtKey(key);
+  const defaultMin =
+    packageData.contributes.configuration[0].properties[`${configKey}.${key}`]
+      .minimum;
+  const defaultMax =
+    packageData.contributes.configuration[0].properties[`${configKey}.${key}`]
+      .maximum;
 
   if (typeof configValue === 'number' && configValue !== 0) {
     result = configValue;
@@ -51,8 +59,10 @@ export const getPwdListLength = (): number => {
     result = defaultValues.passwords;
   }
 
-  if (result === 0) {
-    result = 1;
+  if (result < defaultMin) {
+    result = defaultMin;
+  } else if (result > defaultMax) {
+    result = defaultMax;
   }
 
   if ($$debugging) {
