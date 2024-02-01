@@ -17,6 +17,7 @@
 
 ### Changed
 
+- Added many consistency checks in `generator.ts`
 - Many improvements in README.md
 - Bugfixing and refactoring
 - The package size is even smaller

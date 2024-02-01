@@ -1,5 +1,10 @@
 import crypto from 'node:crypto';
-import { $$debugging, getConfigValueAtKey, configKey } from './globals';
+import {
+  $$debugging,
+  $$logErrors,
+  getConfigValueAtKey,
+  configKey,
+} from './globals';
 import packageData from '../package.json';
 
 /**
@@ -87,7 +92,14 @@ export const getPwdListLength = (): number => {
  */
 export const getUpperCases = (): string[] => {
   let result = [];
-  const configValues = getConfigValueAtKey('uppercases');
+  const key = 'uppercases';
+  const configValues = getConfigValueAtKey(key);
+  const defaultMin =
+    packageData.contributes.configuration[0].properties[`${configKey}.${key}`]
+      .minLength;
+  const defaultMax =
+    packageData.contributes.configuration[0].properties[`${configKey}.${key}`]
+      .maxLength;
 
   if (typeof configValues === 'string' && configValues.length !== 0) {
     result = configValues.split('');
@@ -95,8 +107,20 @@ export const getUpperCases = (): string[] => {
     result = defaultValues.uppercases.split('');
   }
 
+  if (result.length < defaultMin) {
+    result.push('A');
+  } else if (result.length > defaultMax) {
+    result = result.slice(0, defaultMax);
+  }
+
   if ($$debugging) {
-    console.log('§> getUpperCases', { configValues, result });
+    console.log('§> getUpperCases', {
+      key,
+      configValues,
+      defaultMin,
+      defaultMax,
+      result,
+    });
   }
 
   return result;
@@ -110,7 +134,14 @@ export const getUpperCases = (): string[] => {
  */
 export const getUpperCasesOccurrences = (): number => {
   let result = 0;
-  const configValue = getConfigValueAtKey('uppercaseOccurrences');
+  const key = 'uppercaseOccurrences';
+  const configValue = getConfigValueAtKey(key);
+  const defaultMin =
+    packageData.contributes.configuration[0].properties[`${configKey}.${key}`]
+      .minimum;
+  const defaultMax =
+    packageData.contributes.configuration[0].properties[`${configKey}.${key}`]
+      .maximum;
 
   if (typeof configValue === 'number' && configValue !== 0) {
     result = configValue;
@@ -118,14 +149,20 @@ export const getUpperCasesOccurrences = (): number => {
     result = defaultValues.uppercaseOccurrences;
   }
 
-  if (result > 2) {
-    result = 2;
-  } else if (result < 1) {
-    result = 1;
+  if (result > defaultMax) {
+    result = defaultMax;
+  } else if (result < defaultMin) {
+    result = defaultMin;
   }
 
   if ($$debugging) {
-    console.log('§> getUpperCasesOccurrences', { configValue, result });
+    console.log('§> getUpperCasesOccurrences', {
+      key,
+      configValue,
+      defaultMin,
+      defaultMax,
+      result,
+    });
   }
 
   return result;
@@ -139,12 +176,25 @@ export const getUpperCasesOccurrences = (): number => {
  */
 export const getLowerCases = (): string[] => {
   let result = [];
-  const configValues = getConfigValueAtKey('lowercases');
+  const key = 'lowercases';
+  const configValues = getConfigValueAtKey(key);
+  const defaultMin =
+    packageData.contributes.configuration[0].properties[`${configKey}.${key}`]
+      .minLength;
+  const defaultMax =
+    packageData.contributes.configuration[0].properties[`${configKey}.${key}`]
+      .maxLength;
 
   if (typeof configValues === 'string' && configValues.length !== 0) {
     result = configValues.split('');
   } else {
     result = defaultValues.lowercases.split('');
+  }
+
+  if (result.length < defaultMin) {
+    result.push('a');
+  } else if (result.length > defaultMax) {
+    result = result.slice(0, defaultMax);
   }
 
   if ($$debugging) {
@@ -162,7 +212,14 @@ export const getLowerCases = (): string[] => {
  */
 export const getLowerCasesOccurrences = (): number => {
   let result = 0;
-  const configValue = getConfigValueAtKey('lowercaseOccurrences');
+  const key = 'lowercaseOccurrences';
+  const configValue = getConfigValueAtKey(key);
+  const defaultMin =
+    packageData.contributes.configuration[0].properties[`${configKey}.${key}`]
+      .minimum;
+  const defaultMax =
+    packageData.contributes.configuration[0].properties[`${configKey}.${key}`]
+      .maximum;
 
   if (typeof configValue === 'number' && configValue !== 0) {
     result = configValue;
@@ -170,14 +227,20 @@ export const getLowerCasesOccurrences = (): number => {
     result = defaultValues.lowercaseOccurrences;
   }
 
-  if (result > 2) {
-    result = 2;
-  } else if (result < 1) {
-    result = 1;
+  if (result > defaultMax) {
+    result = defaultMax;
+  } else if (result < defaultMin) {
+    result = defaultMin;
   }
 
   if ($$debugging) {
-    console.log('§> getLowerCasesOccurrences', { configValue, result });
+    console.log('§> getLowerCasesOccurrences', {
+      key,
+      configValue,
+      defaultMin,
+      defaultMax,
+      result,
+    });
   }
 
   return result;
@@ -191,7 +254,14 @@ export const getLowerCasesOccurrences = (): number => {
  */
 export const getNumbers = (): string[] => {
   let result = [];
-  const configValues = getConfigValueAtKey('numbers');
+  const key = 'numbers';
+  const configValues = getConfigValueAtKey(key);
+  const defaultMin =
+    packageData.contributes.configuration[0].properties[`${configKey}.${key}`]
+      .minLength;
+  const defaultMax =
+    packageData.contributes.configuration[0].properties[`${configKey}.${key}`]
+      .maxLength;
 
   if (typeof configValues === 'string' && configValues.length !== 0) {
     result = configValues.split('');
@@ -199,8 +269,20 @@ export const getNumbers = (): string[] => {
     result = defaultValues.numbers.split('');
   }
 
+  if (result.length < defaultMin) {
+    result.push('1');
+  } else if (result.length > defaultMax) {
+    result = result.slice(0, defaultMax);
+  }
+
   if ($$debugging) {
-    console.log('§> getNumbers', { configValues, result });
+    console.log('§> getNumbers', {
+      key,
+      configValues,
+      defaultMin,
+      defaultMax,
+      result,
+    });
   }
 
   return result;
@@ -214,7 +296,14 @@ export const getNumbers = (): string[] => {
  */
 export const getNumberOccurrences = (): number => {
   let result = 0;
-  const configValue = getConfigValueAtKey('numberOccurrences');
+  const key = 'numberOccurrences';
+  const configValue = getConfigValueAtKey(key);
+  const defaultMin =
+    packageData.contributes.configuration[0].properties[`${configKey}.${key}`]
+      .minimum;
+  const defaultMax =
+    packageData.contributes.configuration[0].properties[`${configKey}.${key}`]
+      .maximum;
 
   if (typeof configValue === 'number' && configValue !== 0) {
     result = configValue;
@@ -222,14 +311,20 @@ export const getNumberOccurrences = (): number => {
     result = defaultValues.numberOccurrences;
   }
 
-  if (result > 2) {
-    result = 2;
-  } else if (result < 1) {
-    result = 1;
+  if (result > defaultMax) {
+    result = defaultMax;
+  } else if (result < defaultMin) {
+    result = defaultMin;
   }
 
   if ($$debugging) {
-    console.log('§> getNumberOccurrences', { configValue, result });
+    console.log('§> getNumberOccurrences', {
+      key,
+      configValue,
+      defaultMin,
+      defaultMax,
+      result,
+    });
   }
 
   return result;
@@ -243,7 +338,14 @@ export const getNumberOccurrences = (): number => {
  */
 export const getSymbols = (): string[] => {
   let result = [];
-  const configValues = getConfigValueAtKey('symbols');
+  const key = 'symbols';
+  const configValues = getConfigValueAtKey(key);
+  const defaultMin =
+    packageData.contributes.configuration[0].properties[`${configKey}.${key}`]
+      .minLength;
+  const defaultMax =
+    packageData.contributes.configuration[0].properties[`${configKey}.${key}`]
+      .maxLength;
 
   if (typeof configValues === 'string' && configValues.length !== 0) {
     result = configValues.split('');
@@ -251,8 +353,20 @@ export const getSymbols = (): string[] => {
     result = defaultValues.symbols.split('');
   }
 
+  if (result.length < defaultMin) {
+    result.push('$');
+  } else if (result.length > defaultMax) {
+    result = result.slice(0, defaultMax);
+  }
+
   if ($$debugging) {
-    console.log('§> getSymbols', { configValues, result });
+    console.log('§> getSymbols', {
+      key,
+      configValues,
+      defaultMin,
+      defaultMax,
+      result,
+    });
   }
 
   return result;
@@ -266,7 +380,14 @@ export const getSymbols = (): string[] => {
  */
 export const getSymbolOccurrences = (): number => {
   let result = 0;
-  const configValue = getConfigValueAtKey('symbolOccurrences');
+  const key = 'symbolOccurrences';
+  const configValue = getConfigValueAtKey(key);
+  const defaultMin =
+    packageData.contributes.configuration[0].properties[`${configKey}.${key}`]
+      .minimum;
+  const defaultMax =
+    packageData.contributes.configuration[0].properties[`${configKey}.${key}`]
+      .maximum;
 
   if (typeof configValue === 'number' && configValue !== 0) {
     result = configValue;
@@ -274,14 +395,20 @@ export const getSymbolOccurrences = (): number => {
     result = defaultValues.symbolOccurrences;
   }
 
-  if (result > 2) {
-    result = 2;
-  } else if (result < 1) {
-    result = 1;
+  if (result > defaultMax) {
+    result = defaultMax;
+  } else if (result < defaultMin) {
+    result = defaultMin;
   }
 
   if ($$debugging) {
-    console.log('§> getSymbolOccurrences', { configValue, result });
+    console.log('§> getSymbolOccurrences', {
+      key,
+      configValue,
+      defaultMin,
+      defaultMax,
+      result,
+    });
   }
 
   return result;

@@ -134,16 +134,17 @@ Alternatively, you can change the values ​​directly in the configuration fil
 
 ## Contributing
 
-Do you want to contribute? You're welcome!
+Contributions to this project are welcomed!
 
-Whether you want to:
+Whether you have
 
-- report a bug
+- questions, concerns, or suggestions for improving Sam's Passwords Generator
+- want to report a bug
 - submit a fix
 - propose new features
 
-open an
-[issue on github](https://github.com/ThornDuke/sams-pwd-generator/issues).
+please don't hesitate to reach out to us on GitHub and
+[open an issue](https://github.com/ThornDuke/sams-pwd-generator/issues).
 
 ## Acknowledgements
 
