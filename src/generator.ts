@@ -40,7 +40,8 @@ export const randomInt = (min: number, max: number): number => {
 /**
  * Gets the amount of password produced each time the command is called.
  *
- * @returns {number} A number greater than zero
+ * @returns {number} A number greater `minimum` configuration default
+ * and lesser than `maximum` configuration default.
  */
 export const getPwdListLength = (): number => {
   let result = 0;
@@ -66,7 +67,13 @@ export const getPwdListLength = (): number => {
   }
 
   if ($$debugging) {
-    console.log('§> getPwdListLength', { configValue, result });
+    console.log('§> getPwdListLength', {
+      key,
+      configValue,
+      defaultMin,
+      defaultMax,
+      result,
+    });
   }
 
   return result;
