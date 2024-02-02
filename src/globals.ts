@@ -1,3 +1,11 @@
+/**
+ * globals.ts
+ *
+ * Global constants and function
+ *
+ * First edit: 2024-01-15
+ */
+
 import * as vscode from 'vscode';
 
 /**

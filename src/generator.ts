@@ -1,3 +1,12 @@
+/**
+ * generator.ts
+ *
+ * It is the engine that creates passwords and
+ * makes them available to the extension.
+ *
+ * First edit: 2024-01-15
+ */
+
 import crypto from 'node:crypto';
 import {
   $$debugging,

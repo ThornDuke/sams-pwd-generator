@@ -1,4 +1,14 @@
 /**
+ * extension.ts
+ *
+ * Contains methods that link parameters set in `package.json`
+ * with methods exposed by `generator.ts`, command definitions,
+ * and methods for rendering passwords.
+ *
+ * First edit: 2024-01-15
+ */
+
+/**
  * The module 'vscode' contains the VS Code extensibility API
  * Import the module and reference it with the alias vscode
  * in your code below
