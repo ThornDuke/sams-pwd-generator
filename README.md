@@ -18,6 +18,18 @@
   width="650"
   />
 
+## Table of content
+
+- [Features](#features)
+- [Installation](#installation)
+- [How to use](#how-to-use)
+  - [1. Fixed-length passwords](#1-fixed-length-passwords)
+  - [2. Arbitrary-length passwords](#2-arbitrary-length-passwords)
+  - [3. _On the fly_ passwords](#3-on-the-fly-passwords)
+- [Managing settings](#managing-settings)
+- [Contributing](#contributing)
+- [Acknowledgements](#acknowledgements)
+
 ## Features
 
 This extension allows you to easily create complex and solid passwords of
@@ -38,11 +50,15 @@ Thanks to the use of the `crypto` library and an effective shuffling algorithm,
 the passwords produced are aesthetically beautiful and expressive of a high
 level of entropy.
 
+[Back to [table of content](#table-of-content)]
+
 ## Installation
 
 1. Open **Extensions** sidebar panel in VS Code. `View → Extensions`
 2. Search for `Sam's Passwords Generator`
 3. Click `Install` to install it.
+
+[Back to [table of content](#table-of-content)]
 
 ## How to use
 
@@ -67,6 +83,8 @@ When you choose one of these commands the `Output` tab in VSCode opens showing a
 list of passwords with the chosen length. Choose one, copy and paste it into the
 editor where you need it.
 
+[Back to [table of content](#table-of-content)]
+
 ### 2. Arbitrary-length passwords
 
 You also have another command available:
@@ -82,6 +100,8 @@ passwords produced can be changed in the extension settings as explained below.
   alt="demo"
   width="650"
   />
+
+[Back to [table of content](#table-of-content)]
 
 ### 3. _On the fly_ passwords
 
@@ -103,6 +123,8 @@ In the same way you can remove the command from the context menu by changing the
   alt="demo"
   width="650"
   />
+
+[Back to [table of content](#table-of-content)]
 
 ## Managing settings
 
@@ -132,13 +154,15 @@ Alternatively, you can change the values ​​directly in the configuration fil
 }
 ```
 
+[Back to [table of content](#table-of-content)]
+
 ## Contributing
 
 Contributions to this project are welcomed!
 
 Whether you have
 
-- questions, concerns, or suggestions for improving Sam's Passwords Generator
+- questions, concerns, or suggestions for improving this extension
 - want to report a bug
 - submit a fix
 - propose new features
@@ -146,6 +170,10 @@ Whether you have
 please don't hesitate to reach out to us on GitHub and
 [open an issue](https://github.com/ThornDuke/sams-pwd-generator/issues).
 
+[Back to [table of content](#table-of-content)]
+
 ## Acknowledgements
 
 The icon is created by [Freepik - Flaticon](https://www.flaticon.com)
+
+[Back to [table of content](#table-of-content)]

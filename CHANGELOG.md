@@ -3,7 +3,7 @@
 <!--
 ## [major.minor.patch] - yyyy-mm-dd
 ### Added
-- filena.me {function} description
+- filena.me {function}: description
 ### Fixed
 ### Changed
 ### Removed
@@ -15,6 +15,9 @@
 
 - Added a configuration parameter to toggle the visibility of the context menu
   command: `sampwdgenerator.showContextMenuCommand`
+- Added snippet management to the development environment, which also starts a
+  parallel project that will continue in the future
+- README.md: table of content
 
 ### Changed
 
