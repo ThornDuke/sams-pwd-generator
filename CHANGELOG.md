@@ -11,6 +11,11 @@
 ## [Unreleased]
 -->
 
+## [1.3.1] - 2024-02-10
+
+- README.md {Managing settings}: Punctual description of every single parameter
+- Every code file: disclaimer
+
 ## [1.3.0] - 2024-02-03
 
 ### Added

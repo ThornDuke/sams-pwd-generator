@@ -27,8 +27,11 @@
   - [2. Arbitrary-length passwords](#2-arbitrary-length-passwords)
   - [3. _On the fly_ passwords](#3-on-the-fly-passwords)
 - [Managing settings](#managing-settings)
+  - [Extension settings page](#extension-settings-page)
+  - [VSCode configuration file](#vscode-configuration-file)
 - [Contributing](#contributing)
 - [Acknowledgements](#acknowledgements)
+- [Disclaimer](#disclaimer)
 
 ## Features
 
@@ -128,10 +131,51 @@ In the same way you can remove the command from the context menu by changing the
 
 ## Managing settings
 
+### Extension settings page
+
 Click on `Manage / Extension settings` and change the values ​​according to your
 preferences.
 
-Alternatively, you can change the values ​​directly in the configuration file:
+The extension can be customised as follows (default values in brackets):
+
+**Sampwdgenerator: Passwords** (`10`)\
+Amount of password produced each time the command is called.
+
+**Sampwdgenerator: Uppercases** (`ABCDEFGHIJKLMNOPQRSTUVWXYZ`)\
+A string containing the uppercase characters used to construct passwords.
+
+**Sampwdgenerator: Uppercase Occurrences** (`1`)\
+Minimum amount of uppercase characters contained in each password.
+
+**Sampwdgenerator: Lowercases** (`abcdefghijklmnopqrstuvwxyz`)\
+A string containing the lowercase characters used to construct passwords.
+
+**Sampwdgenerator: Lowercase Occurrences** (`1`)\
+Minimum amount of lowercase characters contained in each password.
+
+**Sampwdgenerator: Numbers** (`0123456789`)\
+A string containing the numbers used to construct passwords.
+
+**Sampwdgenerator: Number Occurrences** (`1`)\
+Minimum amount of digits contained in each password.
+
+**Sampwdgenerator: Symbols** (`£$%&*§#@`)\
+A string containing the symbols used to construct passwords.
+
+**Sampwdgenerator: Symbol Occurrences** (`1`)\
+Minimum amount of special characters contained in each password.
+
+**Sampwdgenerator: Length At Cursor** (`12`)\
+Length of the password generated at the cursor position.
+
+**Sampwdgenerator: Show Context Menu Command** (`true`)\
+Show the command `Generate Password At Cursor` in the context menu.
+
+[Back to [table of content](#table-of-content)]
+
+### VSCode configuration file
+
+You can change the values ​​directly in the configuration file:
 
 1. Open the command palette (either with `F1` or `Ctrl+Shift+P` or
    `Shift+Command+P`)
@@ -175,5 +219,21 @@ please don't hesitate to reach out to us on GitHub and
 ## Acknowledgements
 
 The icon is created by [Freepik - Flaticon](https://www.flaticon.com)
+
+[Back to [table of content](#table-of-content)]
+
+## Disclaimer
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+this program. If not, see <https://www.gnu.org/licenses/>.
 
 [Back to [table of content](#table-of-content)]
